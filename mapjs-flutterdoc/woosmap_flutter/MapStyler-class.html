@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the MapStyler class from the woosmap_flutter library, for the Dart programming language.">
+  <title>MapStyler class - woosmap_flutter library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">woosmap_flutter</a></li>
+    <li><a href="../woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+    <li class="self-crumb">MapStyler class</li>
+  </ol>
+  <div class="self-name">MapStyler</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">MapStyler</span> class 
+ 
+</h1></div>
+
+    
+
+
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="MapStyler" class="callable">
+          <span class="name"><a href="../woosmap_flutter/MapStyler/MapStyler.html">MapStyler</a></span><span class="signature">(<span class="parameter" id="-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+        <dt id="MapStyler.fromJson" class="callable">
+          <span class="name"><a href="../woosmap_flutter/MapStyler/MapStyler.fromJson.html">MapStyler.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="color" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/color.html">color</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd>
+  The color to use to style features. Expected to be in hex form <code>#RRBBGG</code>
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="gamma" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/gamma.html">gamma</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Applies a gamma correction on lightness.
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hue" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/hue.html">hue</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd>
+  The color to extract the hue from. The lightness and saturation will be kept from the original color.
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="invertLightness" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/invertLightness.html">invertLightness</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> 
+
+</dt>
+<dd>
+  Inverts the lightness.
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="lightness" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/lightness.html">lightness</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Changes the lightness.
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="saturation" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/saturation.html">saturation</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Changes the saturation.
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="visibility" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/visibility.html">visibility</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd>
+  Sets the visibility of the selected features. Expected to be in hex form <code>#RRBBGG</code>. expected values are “on”, “off”
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="weight" class="property">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/weight.html">weight</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> 
+
+</dt>
+<dd>
+  Changes the weight of drawn features (mostly lines, labels outline).
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toJson" class="callable">
+  <span class="name"><a href="../woosmap_flutter/MapStyler/toJson.html">toJson</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">woosmap_flutter</a></li>
+  <li><a href="../woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+  <li class="self-crumb">MapStyler class</li>
+</ol>
+
+
+    <h5>woosmap_flutter library</h5>
+    <ol>
+      <li class="section-title"><a href="../woosmap_flutter/woosmap_flutter-library.html#classes">Classes</a></li>
+        <li><a href="../woosmap_flutter/DirectionParameter-class.html">DirectionParameter</a></li>
+        <li><a href="../woosmap_flutter/DirectionRequest-class.html">DirectionRequest</a></li>
+        <li><a href="../woosmap_flutter/IndoorDirectionRequest-class.html">IndoorDirectionRequest</a></li>
+        <li><a href="../woosmap_flutter/IndoorRendererConfiguration-class.html">IndoorRendererConfiguration</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetConfiguration-class.html">IndoorWidgetConfiguration</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetConfigurationUI-class.html">IndoorWidgetConfigurationUI</a></li>
+        <li><a href="../woosmap_flutter/LatLng-class.html">LatLng</a></li>
+        <li><a href="../woosmap_flutter/LatLngBounds-class.html">LatLngBounds</a></li>
+        <li><a href="../woosmap_flutter/LatLngBoundsLiteral-class.html">LatLngBoundsLiteral</a></li>
+        <li><a href="../woosmap_flutter/LatLngLiteral-class.html">LatLngLiteral</a></li>
+        <li><a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a></li>
+        <li><a href="../woosmap_flutter/MapStyler-class.html">MapStyler</a></li>
+        <li><a href="../woosmap_flutter/MapStyleSpec-class.html">MapStyleSpec</a></li>
+        <li><a href="../woosmap_flutter/Marker-class.html">Marker</a></li>
+        <li><a href="../woosmap_flutter/MarkerOptions-class.html">MarkerOptions</a></li>
+        <li><a href="../woosmap_flutter/StoreOverlay-class.html">StoreOverlay</a></li>
+        <li><a href="../woosmap_flutter/Style-class.html">Style</a></li>
+        <li><a href="../woosmap_flutter/StyleRule-class.html">StyleRule</a></li>
+        <li><a href="../woosmap_flutter/TypedStyleRule-class.html">TypedStyleRule</a></li>
+        <li><a href="../woosmap_flutter/WoosIcon-class.html">WoosIcon</a></li>
+        <li><a href="../woosmap_flutter/WoosIndoorDirectionsIcons-class.html">WoosIndoorDirectionsIcons</a></li>
+        <li><a href="../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></li>
+        <li><a href="../woosmap_flutter/WoosmapFlutter-class.html">WoosmapFlutter</a></li>
+        <li><a href="../woosmap_flutter/WoosmapMapViewWidget-class.html">WoosmapMapViewWidget</a></li>
+        <li><a href="../woosmap_flutter/WoosmMarkerLabelOptions-class.html">WoosmMarkerLabelOptions</a></li>
+        <li><a href="../woosmap_flutter/WoosPadding-class.html">WoosPadding</a></li>
+        <li><a href="../woosmap_flutter/WoosPoint-class.html">WoosPoint</a></li>
+        <li><a href="../woosmap_flutter/WoosSize-class.html">WoosSize</a></li>
+
+      <li class="section-title"><a href="../woosmap_flutter/woosmap_flutter-library.html#extensions">Extensions</a></li>
+        <li><a href="../woosmap_flutter/TravelModeExtension.html">TravelModeExtension</a></li>
+        <li><a href="../woosmap_flutter/UnitSystemExtension.html">UnitSystemExtension</a></li>
+
+
+
+
+
+      <li class="section-title"><a href="../woosmap_flutter/woosmap_flutter-library.html#enums">Enums</a></li>
+        <li><a href="../woosmap_flutter/GestureHandlingMode.html">GestureHandlingMode</a></li>
+        <li><a href="../woosmap_flutter/IndoorLevelSelectorPosition.html">IndoorLevelSelectorPosition</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetResponsiveMode.html">IndoorWidgetResponsiveMode</a></li>
+        <li><a href="../woosmap_flutter/TravelMode.html">TravelMode</a></li>
+        <li><a href="../woosmap_flutter/UnitSystem.html">UnitSystem</a></li>
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../woosmap_flutter/MapStyler-class.html#constructors">Constructors</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/MapStyler.html">MapStyler</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/MapStyler.fromJson.html">fromJson</a></li>
+
+
+        <li class="section-title">
+          <a href="../woosmap_flutter/MapStyler-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../woosmap_flutter/MapStyler/color.html">color</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/gamma.html">gamma</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/hue.html">hue</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/invertLightness.html">invertLightness</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/lightness.html">lightness</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/saturation.html">saturation</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/visibility.html">visibility</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/weight.html">weight</a></li>
+
+        <li class="section-title"><a href="../woosmap_flutter/MapStyler-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../woosmap_flutter/MapStyler/toJson.html">toJson</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../woosmap_flutter/MapStyler-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    woosmap_flutter
+      0.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

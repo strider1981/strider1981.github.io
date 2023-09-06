@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 6.2.2">
+  <meta name="description" content="woosmap_flutter API docs, for the Dart programming language.">
+  <title>woosmap_flutter - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://developers.woosmap.com/products/indoor-api/get-started/">woosmap_flutter package</a></li>
+  </ol>
+  <div class="self-name">woosmap_flutter</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="woosmap_flutter">woosmap_flutter</h1>
+<p>The Woosmap Flutter SDK is a library that embeds interactive maps directly into your application. You can also add stores overlay to the map to call out points of interest and get relative information.</p>
+<p>The SDK offers an interface to manage the Indoor Mapview and subscribe to events on the map.</p>
+<p>Please get your email and token from your pro account. You may ask for one if necessary, or you can test with our developers' credentials if you lack time.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Android</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Support	SDK</td>
+<td>33+</td>
+<td>13.0+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<p>Add woosmap_flutter as a dependency in your <code>pubspec.yaml</code> file.</p>
+<h3 id="how-to-display-map">How to display Map</h3>
+<ol>
+<li>Instantiating a WoosmapMapViewWidget.</li>
+</ol>
+<pre class="language-dart"><code>    WoosmapMapViewWidget(
+        wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+        onRef: (p0) async {
+          _controller = p0;
+        },
+        mapOptions: {
+          "center": {"lat": 19.115932, "lng": 72.907852},
+          "zoom": 10
+        },
+        click: (message) {
+          debugPrint("idle");
+        },
+        bounds_changed: () {
+          debugPrint("idle");
+        },
+        center_changed: () {
+          debugPrint("idle");
+        },
+        dblclick: (m) {
+          debugPrint("idle");
+        },
+        drag: () {
+          debugPrint("idle");
+        },
+        dragend: () {
+          debugPrint("idle");
+        },
+        dragstart: () {
+          debugPrint("idle");
+        },
+        idle: () {
+          debugPrint("idle");
+        },
+        mousemove: (x) {
+          debugPrint("idle");
+        },
+        mouseout: (x) {
+          debugPrint("idle");
+        },
+        mouseover: (x) {
+          debugPrint("idle");
+        },
+        rightclick: (x) {
+          debugPrint("idle");
+        },
+        zoom_changed: () {
+          debugPrint("idle");
+        },
+      )
+</code></pre>
+<ol start="2">
+<li>Accessing various map functions</li>
+</ol>
+<ul>
+<li>fitBounds: Sets the viewport to contain the given bounds.</li>
+</ul>
+<pre class="language-dart"><code>await _controller.fitBounds(
+        LatLngBounds.fromJson({
+          "ne": {"lat": 48.844437932920535, "lng": 2.3743880269761393},
+          "sw": {"lat": 48.854437932920535, "lng": 2.3843880269761393}
+        }),
+        WoosPadding.fromJson({"top": 2, "left": 2, "right": 3, "bottom": 3}));
+</code></pre>
+<ul>
+<li>getCenter: Returns the position displayed at the center of the map.</li>
+</ul>
+<pre class="language-dart"><code>LatLng result = await _controller.getCenter();
+</code></pre>
+<ul>
+<li>getBounds: Returns the lat/lng bounds of the current viewport. Optionally takes a padding parameter.</li>
+</ul>
+<pre class="language-dart"><code>LatLngBounds result = await _controller.getBounds(
+        WoosPadding.fromJson({"top": 2, "left": 2, "right": 3, "bottom": 3}));
+</code></pre>
+<ul>
+<li>getHeading: Returns the compass heading. The heading value is measured in degrees (clockwise) from cardinal direction North.</li>
+</ul>
+<pre class="language-dart"><code>double result = (await _controller.getHeading()) as double;
+</code></pre>
+<ul>
+<li>getTilt: Returns the current angle of incidence of the map, in degrees from the viewport plane to the map plane</li>
+</ul>
+<pre class="language-dart"><code>double result = (await _controller.getTilt()) as double;
+</code></pre>
+<ul>
+<li>getZoom: Returns the current angle of incidence of the map, in degrees from the viewport plane to the map plane.</li>
+</ul>
+<pre class="language-dart"><code>double result = (await _controller.getZoom()) as double;
+</code></pre>
+<ul>
+<li>panBy: Changes the center of the map by the given distance in pixels</li>
+</ul>
+<pre class="language-dart"><code>await _controller.panBy(20, 10);
+</code></pre>
+<ul>
+<li>panTo: Changes the center of the map to the given LatLng.</li>
+</ul>
+<pre class="language-dart"><code>await _controller.panTo(
+        LatLng.fromJson({"lat": 48.844437932920535, "lng": 2.3743880269761393}),
+        WoosPadding.fromJson({"top": 2, "left": 2, "right": 3, "bottom": 3}));
+</code></pre>
+<ul>
+<li>panToBounds: Pans the map by the minimum amount necessary to contain the given LatLngBounds. It makes no guarantee where on the map the bounds will be, except that the map will be panned to show as much of the bounds as possible inside <code>{currentMapSizeInPx} - {padding}</code>.</li>
+</ul>
+<pre class="language-dart"><code>await _controller.panToBounds(
+        LatLngBounds.fromJson({
+          "ne": {"lat": 48.844437932920535, "lng": 2.3743880269761393},
+          "sw": {"lat": 48.854437932920535, "lng": 2.3843880269761393}
+        }),
+        WoosPadding.fromJson({"top": 2, "left": 2, "right": 3, "bottom": 3}));
+</code></pre>
+<ul>
+<li>setCenter: Sets the map center</li>
+</ul>
+<pre class="language-dart"><code>await _controller.setCenter(
+        LatLng.fromJson({"lat": 48.844437932920535, "lng": 2.3743880269761393}),
+        WoosPadding.fromJson({"top": 2, "left": 2, "right": 3, "bottom": 3}));
+</code></pre>
+<ul>
+<li>setHeading: Sets the compass heading for map measured in degrees from cardinal direction North.</li>
+</ul>
+<pre class="language-dart"><code>await _controller.setHeading(20);
+</code></pre>
+<ul>
+<li>setTilt: Sets tilt of map</li>
+</ul>
+<pre class="language-dart"><code>await _controller.setTilt(5);
+</code></pre>
+<ul>
+<li>setZoom: Set zoom level of map</li>
+</ul>
+<pre class="language-dart"><code>await _controller.setZoom(20);
+</code></pre>
+<h3 id="building-directions-request">Building Directions Request</h3>
+<p>You can calculate directions and plot by using the <code>WoosmapMapViewWidget.route</code> method. This method is an interface to the Route endpoint of Woosmap Distance API. This service compute travel distance, time and path for a pair of origin and destination.</p>
+<p>You may either display these directions results using custom overlays or use the <code>WoosmapMapViewWidget.setRoute</code> method to render these results.</p>
+<pre class="language-dart"><code class="language-dart">    WoosmapMapViewWidget(
+        wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+        onRef: (p0) async {
+          _controller = p0;
+        },
+        mapOptions: {
+          "center": {"lat": 51.52, "lng": -0.13},
+          "zoom": 5
+        },
+        routeIndex_changed: (index) {
+            debugPrint(jsonEncode(index));
+        },
+      )))
+</code></pre>
+<p>To display route on map.</p>
+<pre class="language-dart"><code class="language-dart">    _controller
+            ?.route(DirectionRequest(
+          "origin": {"lat": 48.86288, "lng": 2.34946},
+          "destination": {"lat": 52.52457, "lng": 13.42347}
+        }))
+            .then((route) {
+          _controller?.setRoute(route: route);
+        });
+</code></pre>
+<p>To clear displayed route on map.</p>
+<pre class="language-typescript"><code class="language-typescript">    _controller?.setRoute(route: null);
+</code></pre>
+<p>Please check the javascript guide for more implementation. <a href="https://developers.woosmap.com/products/map-api/guides/directions/">javascript guide</a></p>
+<h3 id="how-to-display-a-indoor-maps">How to display a Indoor maps</h3>
+<ol>
+<li>Instantiating a WoosmapMapViewWidget.</li>
+</ol>
+<pre class="language-dart"><code>WoosmapMapViewWidget(
+  wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+  widget: true,
+  indoorRendererConfiguration: const {
+    "centerMap": true,
+    "defaultFloor": 3
+  },
+  indoorWidgetConfiguration: const {
+    "units": "metric",
+    "ui": {
+      "primaryColor": "#318276",
+      "secondaryColor": "#004651",
+      "tertiaryColor": "#E20813"
+    },
+  },
+  onRef: (p0) async {
+    _controller = p0;
+  },
+  indoor_venue_loaded: (message) {
+    debugPrint(jsonEncode(message));
+  },
+  indoor_feature_selected: (message) {
+    debugPrint(jsonEncode(message));
+  },
+  indoor_level_changed: (message) {
+    debugPrint("$message");
+  },
+  indoor_user_location: (message) {
+    debugPrint(jsonEncode(message));
+  },
+  indoor_highlight_step: (message) {
+    debugPrint(jsonEncode(message));
+  },
+)))
+</code></pre>
+<ol start="2">
+<li>Accessing various functions in <code>WoosmapMapViewWidget</code></li>
+</ol>
+<ul>
+<li>Load Indoor map</li>
+</ul>
+<pre class="language-dart"><code>_controller.setVenue('mtp');
+</code></pre>
+<ul>
+<li>Show all venue</li>
+</ul>
+<pre class="language-dart"><code>_controller.loadIndoorMap('');
+</code></pre>
+<ul>
+<li>Change Indoor Floor</li>
+</ul>
+<pre class="language-dart"><code>_controller.setFloor(3);
+</code></pre>
+<ul>
+<li>Display use position on map</li>
+</ul>
+<pre class="language-dart"><code>_controller.setUserLocation(43.606573820824764, 3.92177514731884, 3, 0, true);
+</code></pre>
+<ul>
+<li>Showing Information about any indoor area</li>
+</ul>
+<pre class="language-dart"><code>_controller.highlightFeatureByRef('tropiques');
+</code></pre>
+<ul>
+<li>Change Direction mode (Widget specific)</li>
+</ul>
+<pre class="language-dart"><code>_controller.setDirectionsMode('wheelchair');
+</code></pre>
+<ul>
+<li>Filter POI to display only labels and icons of POIs which are matching the filters</li>
+</ul>
+<pre class="language-dart"><code>_controller.filterPois(advancedFilter: 'room:=meeting');
+</code></pre>
+<ul>
+<li>Fetching and displaying direction</li>
+</ul>
+<p>By using Lat/Lng</p>
+<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "origin": {"lat": 43.60664187325, "lng": 3.921814671575},
+          "originLevel": 3,
+          "destination": {"lat": 43.60665215333, "lng": 3.921680093435},
+          "destinationLevel": 3,
+          "language": "en",
+          "units": "metric",
+          "mode": "wheelchair"
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+</code></pre>
+<p>By using Poi ID</p>
+<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "originId": 614309,
+          "destinationId": 614165,
+          "language": "en",
+          "units": "metric",
+          "mode": "wheelchair"
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+</code></pre>
+<p>By using Poi Ref</p>
+<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "originId": "ref:meeting001",
+          "destinationId": "ref:tropiques",
+          "language": "en",
+          "units": "metric",
+          "mode": "wheelchair"
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+</code></pre>
+<p>By using WayPoint
+Valid Waypoint formats are <code>lat,lng,level</code> or <code>poiid</code> or ref:<code>poiref</code></p>
+<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "originId": "ref:meeting001",
+          "destinationId": "ref:tropiques",
+          "waypoints": ["ref:meeting001", "ref:tropiques"]
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+</code></pre>
+<h3 id="android-platform-settings">Android Platform Settings</h3>
+<p>This plugin uses Platform Views to embed the Android’s WebView within the Flutter app.</p>
+<p>You should however make sure to set the correct <code>minSdkVersion</code> in <code>android/app/build.gradle</code> if it was previously lower than 19:</p>
+<pre class="language-dart"><code>android {
+  compileSdkVersion 33
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 33
+    }
+}
+</code></pre>
+<p>Add the following permission inside the manifest tag in the <code>AndroidManifest.xml</code> file located at <code>android/app/src/main</code>.</p>
+<pre class="language-dart"><code>&lt;uses-permission android:name="android.permission.INTERNET"/&gt;
+</code></pre>
+<p>For help getting started with Flutter development, view the
+<a href="https://flutter.dev/docs">online documentation</a>, which offers tutorials,
+samples, guidance on mobile development, and a full API reference.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="woosmap_flutter">
+  <span class="name"><a href="woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="woosmap_flutter_method_channel">
+  <span class="name"><a href="woosmap_flutter_method_channel/woosmap_flutter_method_channel-library.html">woosmap_flutter_method_channel</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="woosmap_flutter_platform_interface">
+  <span class="name"><a href="woosmap_flutter_platform_interface/woosmap_flutter_platform_interface-library.html">woosmap_flutter_platform_interface</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://developers.woosmap.com/products/indoor-api/get-started/">woosmap_flutter package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">woosmap_flutter</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+      <li><a href="woosmap_flutter_method_channel/woosmap_flutter_method_channel-library.html">woosmap_flutter_method_channel</a></li>
+      <li><a href="woosmap_flutter_platform_interface/woosmap_flutter_platform_interface-library.html">woosmap_flutter_platform_interface</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    woosmap_flutter
+      0.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

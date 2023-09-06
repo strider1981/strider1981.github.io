@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the fitBounds method from the WoosmapController class, for the Dart programming language.">
+  <title>fitBounds method - WoosmapController class - woosmap_flutter library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">woosmap_flutter</a></li>
+    <li><a href="../../woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+    <li><a href="../../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></li>
+    <li class="self-crumb">fitBounds method</li>
+  </ol>
+  <div class="self-name">fitBounds</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">fitBounds</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">fitBounds</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="fitBounds-param-bound"><span class="type-annotation"><a href="../../woosmap_flutter/LatLngBounds-class.html">LatLngBounds</a></span> <span class="parameter-name">bound</span>, </span></li>
+<li><span class="parameter" id="fitBounds-param-padding"><span class="type-annotation"><a href="../../woosmap_flutter/WoosPadding-class.html">WoosPadding</a>?</span> <span class="parameter-name">padding</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Sets the viewport to contain the given bounds.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; fitBounds(
+    woosmap_object.LatLngBounds bound, woosmap_object.WoosPadding? padding) {
+  String executeFunction = &quot;&quot;;
+
+  executeFunction =
+      &quot;woosmap.fitBounds(${bound.woosmapObject()},${padding != null ? padding.woosmapObject() : &#39;null&#39;});&quot;;
+
+  return _webcontroller
+      .runJavaScript(_scriptFormat(executeFunction))
+      .catchError((error) =&gt;
+          {debugPrint(&#39;statement: $executeFunction Error: $error&#39;)});
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">woosmap_flutter</a></li>
+  <li><a href="../../woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+  <li><a href="../../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></li>
+  <li class="self-crumb">fitBounds method</li>
+</ol>
+
+
+    <h5>WoosmapController class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../woosmap_flutter/WoosmapController-class.html#constructors">Constructors</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/WoosmapController.html">WoosmapController</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/WoosmapController.fromConfig.html">fromConfig</a></li>
+
+
+        <li class="section-title">
+          <a href="../../woosmap_flutter/WoosmapController-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../../woosmap_flutter/WoosmapController/activateIndoor.html">activateIndoor</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/completer.html">completer</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/mapOptions.html">mapOptions</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/rendererConfiguration.html">rendererConfiguration</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/widgetConfiguration.html">widgetConfiguration</a></li>
+
+        <li class="section-title"><a href="../../woosmap_flutter/WoosmapController-class.html#instance-methods">Methods</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/addMarker.html">addMarker</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/addStoreOverlay.html">addStoreOverlay</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/clearDirections.html">clearDirections</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/collectAppID.html">collectAppID</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/directions.html">directions</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/directionsApi.html">directionsApi</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/directionsJS.html">directionsJS</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/execute.html">execute</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/filterPois.html">filterPois</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/fitBounds.html">fitBounds</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/getBounds.html">getBounds</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/getCenter.html">getCenter</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/getHeading.html">getHeading</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/getTilt.html">getTilt</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/getZoom.html">getZoom</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/highlightFeature.html">highlightFeature</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/highlightFeatureByRef.html">highlightFeatureByRef</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/indoorHighlightStep.html">indoorHighlightStep</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/loadIndoorMap.html">loadIndoorMap</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/panBy.html">panBy</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/panTo.html">panTo</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/panToBounds.html">panToBounds</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/processDirectionEvent.html">processDirectionEvent</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/processMarkerEvent.html">processMarkerEvent</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/removeMarker.html">removeMarker</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/removeStoreOverlay.html">removeStoreOverlay</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/returnData.html">returnData</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/route.html">route</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setCenter.html">setCenter</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setDirections.html">setDirections</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setDirectionsMode.html">setDirectionsMode</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setFloor.html">setFloor</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setHeading.html">setHeading</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setRoute.html">setRoute</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setTilt.html">setTilt</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setUserLocation.html">setUserLocation</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setVenue.html">setVenue</a></li>
+          <li><a href="../../woosmap_flutter/WoosmapController/setZoom.html">setZoom</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../woosmap_flutter/WoosmapController-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    woosmap_flutter
+      0.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

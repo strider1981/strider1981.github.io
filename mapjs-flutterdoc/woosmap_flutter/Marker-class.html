@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the Marker class from the woosmap_flutter library, for the Dart programming language.">
+  <title>Marker class - woosmap_flutter library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">woosmap_flutter</a></li>
+    <li><a href="../woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+    <li class="self-crumb">Marker class</li>
+  </ol>
+  <div class="self-name">Marker</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">Marker</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Display markers to identify locations on Woosmap Map.</p>
+<p>Markers are used to display clickable/draggable icons on the map. You can attach a wide variety of event listeners to control user interaction.</p>
+</section>
+
+
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="Marker" class="callable">
+          <span class="name"><a href="../woosmap_flutter/Marker/Marker.html">Marker</a></span><span class="signature">(<span class="parameter" id="-param-markerOptions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">markerOptions</span>, </span><span class="parameter" id="-param-_webcontroller"><span class="type-annotation"><a href="../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></span> <span class="parameter-name">_webcontroller</span>, </span><span class="parameter" id="-param-click">{<span class="type-annotation">dynamic</span> <span class="parameter-name">click</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-mouseover"><span class="type-annotation">dynamic</span> <span class="parameter-name">mouseover</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-mouseout"><span class="type-annotation">dynamic</span> <span class="parameter-name">mouseout</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-clickable_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">clickable_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-cursor_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">cursor_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-icon_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">icon_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-position_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">position_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-dragstart"><span class="type-annotation">dynamic</span> <span class="parameter-name">dragstart</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-drag"><span class="type-annotation">dynamic</span> <span class="parameter-name">drag</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-dragend"><span class="type-annotation">dynamic</span> <span class="parameter-name">dragend</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-draggable_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">draggable_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-visible_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">visible_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="-param-zIndex_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">zIndex_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?}</span>)</span>
+        </dt>
+        <dd>
+          Constructor
+        </dd>
+        <dt id="Marker.fromConfig" class="callable">
+          <span class="name"><a href="../woosmap_flutter/Marker/Marker.fromConfig.html">Marker.fromConfig</a></span><span class="signature">(<span class="parameter" id="fromConfig-param-markerOptions"><span class="type-annotation"><a href="../woosmap_flutter/MarkerOptions-class.html">MarkerOptions</a></span> <span class="parameter-name">markerOptions</span>, </span><span class="parameter" id="fromConfig-param-_webcontroller"><span class="type-annotation"><a href="../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></span> <span class="parameter-name">_webcontroller</span>, </span><span class="parameter" id="fromConfig-param-click">{<span class="type-annotation">dynamic</span> <span class="parameter-name">click</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-mouseover"><span class="type-annotation">dynamic</span> <span class="parameter-name">mouseover</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-mouseout"><span class="type-annotation">dynamic</span> <span class="parameter-name">mouseout</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-clickable_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">clickable_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-cursor_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">cursor_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-icon_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">icon_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-position_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">position_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-dragstart"><span class="type-annotation">dynamic</span> <span class="parameter-name">dragstart</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-drag"><span class="type-annotation">dynamic</span> <span class="parameter-name">drag</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-dragend"><span class="type-annotation">dynamic</span> <span class="parameter-name">dragend</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-draggable_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">draggable_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-visible_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">visible_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?, </span><span class="parameter" id="fromConfig-param-zIndex_changed"><span class="type-annotation">dynamic</span> <span class="parameter-name">zIndex_changed</span>(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)?}</span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="click" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/click.html">click</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when the marker was clicked.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="clickable_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/clickable_changed.html">clickable_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers clickable property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="cursor_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/cursor_changed.html">cursor_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers cursor property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="drag" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/drag.html">drag</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  Fired while dragging
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="dragend" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/dragend.html">dragend</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  Fired when the marker is finished being dragged
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="draggable_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/draggable_changed.html">draggable_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers draggable property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="dragstart" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/dragstart.html">dragstart</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  Fired when dragging starts
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="icon_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/icon_changed.html">icon_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers icon property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="markerOptions" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/markerOptions.html">markerOptions</a></span>
+  <span class="signature">&#8596; <a href="../woosmap_flutter/MarkerOptions-class.html">MarkerOptions</a></span> 
+
+</dt>
+<dd>
+  Style: (Style object Specification)<code>https://developers.woosmap.com/products/map-api/reference/1.4/#Style</code>
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="mouseout" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/mouseout.html">mouseout</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when the mouse leaves the area of the marker.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="mouseover" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/mouseover.html">mouseover</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when the mouse enters the area of the marker.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="position_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/position_changed.html">position_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers position property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="visible_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/visible_changed.html">visible_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers visible property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="zIndex_changed" class="property">
+  <span class="name"><a href="../woosmap_flutter/Marker/zIndex_changed.html">zIndex_changed</a></span>
+  <span class="signature">&#8594; (dynamic Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span>)</span>?)</span> 
+
+</dt>
+<dd>
+  This event is fired when markers zIndex property changes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="add" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/add.html">add</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Added Marker
+  
+
+</dd>
+
+        <dt id="getDraggable" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getDraggable.html">getDraggable</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns true if the marker can be dragged
+  
+
+</dd>
+
+        <dt id="getOffset" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getOffset.html">getOffset</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../woosmap_flutter/WoosPoint-class.html">WoosPoint</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get the marker’s offset.
+  
+
+</dd>
+
+        <dt id="getOpacity" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getOpacity.html">getOpacity</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the marker opacity.
+  
+
+</dd>
+
+        <dt id="getPitchAlignment" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getPitchAlignment.html">getPitchAlignment</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the current pitchAlignment property of the marker.
+  
+
+</dd>
+
+        <dt id="getPosition" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getPosition.html">getPosition</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../woosmap_flutter/LatLng-class.html">LatLng</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get the marker’s geographical location.
+  
+
+</dd>
+
+        <dt id="getRotation" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getRotation.html">getRotation</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the current rotation angle of the marker (in degrees).
+  
+
+</dd>
+
+        <dt id="getRotationAlignment" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/getRotationAlignment.html">getRotationAlignment</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the current rotationAlignment property of the marker.
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="processEvent" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/processEvent.html">processEvent</a></span><span class="signature">(<wbr><span class="parameter" id="processEvent-param-eventName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">eventName</span>, </span><span class="parameter" id="processEvent-param-data"><span class="type-annotation">dynamic</span> <span class="parameter-name">data</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="reference" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/reference.html">reference</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return unique reference for <a href="../woosmap_flutter/StoreOverlay-class.html">StoreOverlay</a>
+  
+
+</dd>
+
+        <dt id="remove" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/remove.html">remove</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Remove Marker
+  
+
+</dd>
+
+        <dt id="setDraggable" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setDraggable.html">setDraggable</a></span><span class="signature">(<wbr><span class="parameter" id="setDraggable-param-shouldBeDraggable"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">shouldBeDraggable</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the draggable property and functionality of the marker
+  
+
+</dd>
+
+        <dt id="setIcon" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setIcon.html">setIcon</a></span><span class="signature">(<wbr><span class="parameter" id="setIcon-param-url">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">url</span>, </span><span class="parameter" id="setIcon-param-icon"><span class="type-annotation"><a href="../woosmap_flutter/WoosIcon-class.html">WoosIcon</a>?</span> <span class="parameter-name">icon</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets icon to marker.
+  
+
+</dd>
+
+        <dt id="setOffset" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setOffset.html">setOffset</a></span><span class="signature">(<wbr><span class="parameter" id="setOffset-param-offset"><span class="type-annotation"><a href="../woosmap_flutter/WoosPoint-class.html">WoosPoint</a></span> <span class="parameter-name">offset</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the offset of the marker
+  
+
+</dd>
+
+        <dt id="setOpacity" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setOpacity.html">setOpacity</a></span><span class="signature">(<wbr><span class="parameter" id="setOpacity-param-opacity"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span> <span class="parameter-name">opacity</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the marker opacity.
+  
+
+</dd>
+
+        <dt id="setPitchAlignment" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setPitchAlignment.html">setPitchAlignment</a></span><span class="signature">(<wbr><span class="parameter" id="setPitchAlignment-param-alignment"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">alignment</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the pitchAlignment property of the marker.
+  
+
+</dd>
+
+        <dt id="setPosition" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setPosition.html">setPosition</a></span><span class="signature">(<wbr><span class="parameter" id="setPosition-param-position"><span class="type-annotation"><a href="../woosmap_flutter/LatLng-class.html">LatLng</a></span> <span class="parameter-name">position</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the position of the marker
+  
+
+</dd>
+
+        <dt id="setRotation" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setRotation.html">setRotation</a></span><span class="signature">(<wbr><span class="parameter" id="setRotation-param-rotation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span> <span class="parameter-name">rotation</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the rotation property of the marker.
+  
+
+</dd>
+
+        <dt id="setRotationAlignment" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/setRotationAlignment.html">setRotationAlignment</a></span><span class="signature">(<wbr><span class="parameter" id="setRotationAlignment-param-alignment"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">alignment</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the rotationAlignment property of the marker.
+  
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="woosmapObject" class="callable">
+  <span class="name"><a href="../woosmap_flutter/Marker/woosmapObject.html">woosmapObject</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return Woosmap Marker <code>https://developers.woosmap.com/products/map-api/reference/1.4/#woosmap.map.Marker</code>
+  
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">woosmap_flutter</a></li>
+  <li><a href="../woosmap_flutter/woosmap_flutter-library.html">woosmap_flutter</a></li>
+  <li class="self-crumb">Marker class</li>
+</ol>
+
+
+    <h5>woosmap_flutter library</h5>
+    <ol>
+      <li class="section-title"><a href="../woosmap_flutter/woosmap_flutter-library.html#classes">Classes</a></li>
+        <li><a href="../woosmap_flutter/DirectionParameter-class.html">DirectionParameter</a></li>
+        <li><a href="../woosmap_flutter/DirectionRequest-class.html">DirectionRequest</a></li>
+        <li><a href="../woosmap_flutter/IndoorDirectionRequest-class.html">IndoorDirectionRequest</a></li>
+        <li><a href="../woosmap_flutter/IndoorRendererConfiguration-class.html">IndoorRendererConfiguration</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetConfiguration-class.html">IndoorWidgetConfiguration</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetConfigurationUI-class.html">IndoorWidgetConfigurationUI</a></li>
+        <li><a href="../woosmap_flutter/LatLng-class.html">LatLng</a></li>
+        <li><a href="../woosmap_flutter/LatLngBounds-class.html">LatLngBounds</a></li>
+        <li><a href="../woosmap_flutter/LatLngBoundsLiteral-class.html">LatLngBoundsLiteral</a></li>
+        <li><a href="../woosmap_flutter/LatLngLiteral-class.html">LatLngLiteral</a></li>
+        <li><a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a></li>
+        <li><a href="../woosmap_flutter/MapStyler-class.html">MapStyler</a></li>
+        <li><a href="../woosmap_flutter/MapStyleSpec-class.html">MapStyleSpec</a></li>
+        <li><a href="../woosmap_flutter/Marker-class.html">Marker</a></li>
+        <li><a href="../woosmap_flutter/MarkerOptions-class.html">MarkerOptions</a></li>
+        <li><a href="../woosmap_flutter/StoreOverlay-class.html">StoreOverlay</a></li>
+        <li><a href="../woosmap_flutter/Style-class.html">Style</a></li>
+        <li><a href="../woosmap_flutter/StyleRule-class.html">StyleRule</a></li>
+        <li><a href="../woosmap_flutter/TypedStyleRule-class.html">TypedStyleRule</a></li>
+        <li><a href="../woosmap_flutter/WoosIcon-class.html">WoosIcon</a></li>
+        <li><a href="../woosmap_flutter/WoosIndoorDirectionsIcons-class.html">WoosIndoorDirectionsIcons</a></li>
+        <li><a href="../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></li>
+        <li><a href="../woosmap_flutter/WoosmapFlutter-class.html">WoosmapFlutter</a></li>
+        <li><a href="../woosmap_flutter/WoosmapMapViewWidget-class.html">WoosmapMapViewWidget</a></li>
+        <li><a href="../woosmap_flutter/WoosmMarkerLabelOptions-class.html">WoosmMarkerLabelOptions</a></li>
+        <li><a href="../woosmap_flutter/WoosPadding-class.html">WoosPadding</a></li>
+        <li><a href="../woosmap_flutter/WoosPoint-class.html">WoosPoint</a></li>
+        <li><a href="../woosmap_flutter/WoosSize-class.html">WoosSize</a></li>
+
+      <li class="section-title"><a href="../woosmap_flutter/woosmap_flutter-library.html#extensions">Extensions</a></li>
+        <li><a href="../woosmap_flutter/TravelModeExtension.html">TravelModeExtension</a></li>
+        <li><a href="../woosmap_flutter/UnitSystemExtension.html">UnitSystemExtension</a></li>
+
+
+
+
+
+      <li class="section-title"><a href="../woosmap_flutter/woosmap_flutter-library.html#enums">Enums</a></li>
+        <li><a href="../woosmap_flutter/GestureHandlingMode.html">GestureHandlingMode</a></li>
+        <li><a href="../woosmap_flutter/IndoorLevelSelectorPosition.html">IndoorLevelSelectorPosition</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetResponsiveMode.html">IndoorWidgetResponsiveMode</a></li>
+        <li><a href="../woosmap_flutter/TravelMode.html">TravelMode</a></li>
+        <li><a href="../woosmap_flutter/UnitSystem.html">UnitSystem</a></li>
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../woosmap_flutter/Marker-class.html#constructors">Constructors</a></li>
+          <li><a href="../woosmap_flutter/Marker/Marker.html">Marker</a></li>
+          <li><a href="../woosmap_flutter/Marker/Marker.fromConfig.html">fromConfig</a></li>
+
+
+        <li class="section-title">
+          <a href="../woosmap_flutter/Marker-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../woosmap_flutter/Marker/click.html">click</a></li>
+          <li><a href="../woosmap_flutter/Marker/clickable_changed.html">clickable_changed</a></li>
+          <li><a href="../woosmap_flutter/Marker/cursor_changed.html">cursor_changed</a></li>
+          <li><a href="../woosmap_flutter/Marker/drag.html">drag</a></li>
+          <li><a href="../woosmap_flutter/Marker/dragend.html">dragend</a></li>
+          <li><a href="../woosmap_flutter/Marker/draggable_changed.html">draggable_changed</a></li>
+          <li><a href="../woosmap_flutter/Marker/dragstart.html">dragstart</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../woosmap_flutter/Marker/icon_changed.html">icon_changed</a></li>
+          <li><a href="../woosmap_flutter/Marker/markerOptions.html">markerOptions</a></li>
+          <li><a href="../woosmap_flutter/Marker/mouseout.html">mouseout</a></li>
+          <li><a href="../woosmap_flutter/Marker/mouseover.html">mouseover</a></li>
+          <li><a href="../woosmap_flutter/Marker/position_changed.html">position_changed</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../woosmap_flutter/Marker/visible_changed.html">visible_changed</a></li>
+          <li><a href="../woosmap_flutter/Marker/zIndex_changed.html">zIndex_changed</a></li>
+
+        <li class="section-title"><a href="../woosmap_flutter/Marker-class.html#instance-methods">Methods</a></li>
+          <li><a href="../woosmap_flutter/Marker/add.html">add</a></li>
+          <li><a href="../woosmap_flutter/Marker/getDraggable.html">getDraggable</a></li>
+          <li><a href="../woosmap_flutter/Marker/getOffset.html">getOffset</a></li>
+          <li><a href="../woosmap_flutter/Marker/getOpacity.html">getOpacity</a></li>
+          <li><a href="../woosmap_flutter/Marker/getPitchAlignment.html">getPitchAlignment</a></li>
+          <li><a href="../woosmap_flutter/Marker/getPosition.html">getPosition</a></li>
+          <li><a href="../woosmap_flutter/Marker/getRotation.html">getRotation</a></li>
+          <li><a href="../woosmap_flutter/Marker/getRotationAlignment.html">getRotationAlignment</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../woosmap_flutter/Marker/processEvent.html">processEvent</a></li>
+          <li><a href="../woosmap_flutter/Marker/reference.html">reference</a></li>
+          <li><a href="../woosmap_flutter/Marker/remove.html">remove</a></li>
+          <li><a href="../woosmap_flutter/Marker/setDraggable.html">setDraggable</a></li>
+          <li><a href="../woosmap_flutter/Marker/setIcon.html">setIcon</a></li>
+          <li><a href="../woosmap_flutter/Marker/setOffset.html">setOffset</a></li>
+          <li><a href="../woosmap_flutter/Marker/setOpacity.html">setOpacity</a></li>
+          <li><a href="../woosmap_flutter/Marker/setPitchAlignment.html">setPitchAlignment</a></li>
+          <li><a href="../woosmap_flutter/Marker/setPosition.html">setPosition</a></li>
+          <li><a href="../woosmap_flutter/Marker/setRotation.html">setRotation</a></li>
+          <li><a href="../woosmap_flutter/Marker/setRotationAlignment.html">setRotationAlignment</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+          <li><a href="../woosmap_flutter/Marker/woosmapObject.html">woosmapObject</a></li>
+
+        <li class="section-title inherited"><a href="../woosmap_flutter/Marker-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    woosmap_flutter
+      0.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
