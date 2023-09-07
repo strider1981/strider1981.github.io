@@ -58,7 +58,13 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">IndoorWidgetConfiguration</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span></li>
+      <span class="name ">IndoorWidgetConfiguration</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-autocompleteWithDistance">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">autocompleteWithDistance</span>, </span></li>
+<li><span class="parameter" id="-param-avoidZones"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">avoidZones</span>, </span></li>
+<li><span class="parameter" id="-param-baseFilter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">baseFilter</span>, </span></li>
+<li><span class="parameter" id="-param-directionsMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">directionsMode</span>, </span></li>
+<li><span class="parameter" id="-param-navigationMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">navigationMode</span>, </span></li>
+<li><span class="parameter" id="-param-ui"><span class="type-annotation"><a href="../../woosmap_flutter/IndoorWidgetConfigurationUI-class.html">IndoorWidgetConfigurationUI</a>?</span> <span class="parameter-name">ui</span>, </span></li>
+<li><span class="parameter" id="-param-units"><span class="type-annotation"><a href="../../woosmap_flutter/UnitSystem.html">UnitSystem</a>?</span> <span class="parameter-name">units</span>}</span></li>
 </ol>)
     </section>
 
@@ -71,9 +77,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">IndoorWidgetConfiguration(Map&lt;String, dynamic&gt; json){
-  IndoorWidgetConfiguration.fromJson(json);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">IndoorWidgetConfiguration({
+  this.autocompleteWithDistance,
+  this.avoidZones,
+  this.baseFilter,
+  this.directionsMode,
+  this.navigationMode,
+  this.ui,
+  this.units,
+});</code></pre>
 </section>
 
 

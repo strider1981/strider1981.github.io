@@ -63,6 +63,9 @@
     </section>
 
     
+<section class="desc markdown">
+  <p>Constructs the object from json</p>
+</section>
 
 
     
@@ -84,7 +87,7 @@
   if (json[&#39;rules&#39;] != null) {
     List&lt;Map&lt;String, dynamic&gt;&gt; ruleList = json[&#39;rules&#39;];
     for(Map&lt;String, dynamic&gt; item in ruleList){
-      rules.add(TypedStyleRule.fromJson(item));
+      rules?.add(TypedStyleRule.fromJson(item));
     }
   }
 }</code></pre>

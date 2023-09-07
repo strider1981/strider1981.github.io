@@ -66,6 +66,9 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Returns the JSON representation of the object.</p>
+</section>
 
 
     
@@ -82,9 +85,9 @@
     data[&#39;default&#39;] = defaultStyleRule?.toJson();
   }
 
-  if (rules.isNotEmpty) {
+  if (rules != null) {
     List&lt;Map&lt;String, dynamic&gt;&gt; list = [];
-    for(TypedStyleRule item in rules){
+    for(TypedStyleRule item in rules!){
       list.add(item.toJson());
     }
     data[&#39;rules&#39;] = list;

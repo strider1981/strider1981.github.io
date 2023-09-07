@@ -140,10 +140,10 @@
         onRef: (p0) async {
           _controller = p0;
         },
-        mapOptions: MapOptions({
-          "center": {"lat": 19.115932, "lng": 72.907852},
-          "zoom": 10
-        }),
+        mapOptions: MapOptions(
+          center: LatLng.fromJson({"lat": 19.115932, "lng": 72.907852}),
+          zoom: 10
+        ),
         click: (message) {
           debugPrint("idle");
         },
@@ -276,10 +276,10 @@
         onRef: (p0) async {
           _controller = p0;
         },
-        mapOptions: {
-          "center": {"lat": 51.52, "lng": -0.13},
-          "zoom": 5
-        },
+        mapOptions: MapOptions(
+          center: LatLng.fromJson({"lat": 51.52, "lng": -0.13}),
+          zoom: 5
+        ),
         routeIndex_changed: (index) {
             debugPrint(jsonEncode(index));
         },
@@ -305,7 +305,7 @@
 <p><strong>Note:</strong> Default constructor of <code>WoosmapMapViewWidget</code> is deprecated. We suggest you use new <code>WoosmapMapViewWidget.create</code> which accepts <code>IndoorWidgetConfiguration</code> and <code>IndoorRendererConfiguration</code> objects.</p>
 </blockquote>
 <p><strong>Old way</strong></p>
-<pre class="language-dart"><code>WoosmapMapViewWidget(
+<pre class="language-dart"><code class="language-dart">WoosmapMapViewWidget(
   wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
   widget: true,
   indoorRendererConfiguration: const {
@@ -341,21 +341,21 @@
 );
 </code></pre>
 <p><strong>New way</strong></p>
-<pre class="language-dart"><code>WoosmapMapViewWidget.create(
+<pre class="language-dart"><code class="language-dart">WoosmapMapViewWidget.create(
   wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
   widget: true,
-  indoorRendererConfiguration: IndoorRendererConfiguration({
-    "centerMap": true,
-    "defaultFloor": 3
-  }),
-  indoorWidgetConfiguration: IndoorWidgetConfiguration({
-    "units": "metric",
-    "ui": {
+  indoorRendererConfiguration: IndoorRendererConfiguration(
+    centerMap: true,
+    defaultFloor: 3
+  ),
+  indoorWidgetConfiguration: IndoorWidgetConfiguration(
+    units: UnitSystem.metric,
+    ui: IndoorWidgetConfigurationUI.fromJson({
       "primaryColor": "#318276",
       "secondaryColor": "#004651",
       "tertiaryColor": "#E20813"
-    },
-  }),
+    }),
+  ),
   onRef: (p0) async {
     _controller = p0;
   },
@@ -429,22 +429,22 @@ _controller.directions(DirectionParameter.fromJson({
           "destination": {"lat": 43.60665215333, "lng": 3.921680093435},
           "destinationLevel": 3,
           "language": "en",
-          "units": "metric",
+          "units": UnitSystem.metric,
           "mode": "wheelchair"
         }))
         .then((route) =&gt; {_controller.setDirections(route)});
 
 ///New way
-_controller.directions(IndoorDirectionRequest({
-          "venueId": 'mtp',
-          "origin": {"lat": 43.60664187325, "lng": 3.921814671575},
-          "originLevel": 3,
-          "destination": {"lat": 43.60665215333, "lng": 3.921680093435},
-          "destinationLevel": 3,
-          "language": "en",
-          "units": "metric",
-          "mode": "wheelchair"
-        }))
+_controller.directions(IndoorDirectionRequest(
+          venueId: 'mtp',
+          origin: {"lat": 43.60664187325, "lng": 3.921814671575},
+          originLevel: 3,
+          destination: LatLng.fromJson({"lat": 43.60665215333, "lng": 3.921680093435}),
+          destinationLevel: 3,
+          language: en,
+          units: UnitSystem.metric,
+          mode: "wheelchair"
+        ))
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <p>By using Poi ID</p>
@@ -460,14 +460,14 @@ _controller.directions(DirectionParameter.fromJson({
         .then((route) =&gt; {_controller.setDirections(route)});
 
 ///New way
-_controller.directions(IndoorDirectionRequest({
-          "venueId": 'mtp',
-          "originId": 614309,
-          "destinationId": 614165,
-          "language": "en",
-          "units": "metric",
-          "mode": "wheelchair"
-        }))
+_controller.directions(IndoorDirectionRequest(
+          venueId: 'mtp',
+          originId: 614309,
+          destinationId: 614165,
+          language: "en",
+          units: UnitSystem.metric,
+          mode: "wheelchair"
+        ))
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <p>By using Poi Ref</p>
@@ -483,14 +483,14 @@ _controller.directions(DirectionParameter.fromJson({
         .then((route) =&gt; {_controller.setDirections(route)});
 
 ///New way
-_controller.directions(IndoorDirectionRequest({
-          "venueId": 'mtp',
-          "originId": "ref:meeting001",
-          "destinationId": "ref:tropiques",
-          "language": "en",
-          "units": "metric",
-          "mode": "wheelchair"
-        }))
+_controller.directions(IndoorDirectionRequest(
+          venueId: 'mtp',
+          originId: "ref:meeting001",
+          destinationId: "ref:tropiques",
+          language: "en",
+          units: UnitSystem.metric,
+          mode: "wheelchair"
+        ))
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <p>By using WayPoint
@@ -505,12 +505,12 @@ _controller.directions(DirectionParameter.fromJson({
         .then((route) =&gt; {_controller.setDirections(route)});
 
 ///New way
-_controller.directions(IndoorDirectionRequest.fromJson({
-          "venueId": 'mtp',
-          "originId": "ref:meeting001",
-          "destinationId": "ref:tropiques",
-          "waypoints": ["ref:meeting001", "ref:tropiques"]
-        }))
+_controller.directions(IndoorDirectionRequest(
+          venueId: 'mtp',
+          originId: "ref:meeting001",
+          destinationId: "ref:tropiques",
+          waypoints: ["ref:meeting001", "ref:tropiques"]
+        ))
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <h3 id="how-to-add-a-store-overlay">How to add a store overlay</h3>
@@ -522,10 +522,10 @@ _controller.directions(IndoorDirectionRequest.fromJson({
         onRef: (p0) async {
           _controller = p0;
         },
-        mapOptions: MapOptions({
-          "center": {"lat": 19.115932, "lng": 72.907852},
-          "zoom": 10
-        }),
+        mapOptions: MapOptions(
+          center: LatLng.fromJson({"lat": 19.115932, "lng": 72.907852}),
+          zoom: 10
+        ),
         click: (message) {
           debugPrint("idle");
         },
@@ -576,70 +576,70 @@ _controller.directions(IndoorDirectionRequest.fromJson({
 <p><strong>Old way</strong></p>
 <p>Using default constructor</p>
 <pre class="language-dart"><code class="language-dart">  storesOverlay = StoreOverlay({
-        "breakPoint": 14,
-        "rules": [
-          {
-            "color": "#1D1D1D",
-            "type": "takeaway",
-            "icon": {
-              "url": "https://images.woosmap.com/starbucks-marker-black.svg",
-              "scaledSize": {"height": 40, "width": 34}
-            },
-            "selectedIcon": {
-              "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
-              "scaledSize": {"height": 50, "width": 43}
-            }
-          }
-        ],
-        "default": {
-          "color": "#008a2f",
-          "size": 8,
-          "minSize": 1,
-          "icon": {
-            "url": "https://images.woosmap.com/starbucks-marker.svg",
-            "scaledSize": {"height": 40, "width": 34}
-          },
-          "selectedIcon": {
-            "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
-            "scaledSize": {"height": 50, "width": 43}
-          }
+    "breakPoint": 14,
+    "rules": [
+      {
+        "color": "#1D1D1D",
+        "type": "takeaway",
+        "icon": {
+          "url": "https://images.woosmap.com/starbucks-marker-black.svg",
+          "scaledSize": {"height": 40, "width": 34}
+        },
+        "selectedIcon": {
+          "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+          "scaledSize": {"height": 50, "width": 43}
         }
-      }, _controller!);
+      }
+    ],
+    "default": {
+      "color": "#008a2f",
+      "size": 8,
+      "minSize": 1,
+      "icon": {
+        "url": "https://images.woosmap.com/starbucks-marker.svg",
+        "scaledSize": {"height": 40, "width": 34}
+      },
+      "selectedIcon": {
+        "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+        "scaledSize": {"height": 50, "width": 43}
+      }
+    }
+  }, _controller!);
 
   storesOverlay?.add();
 </code></pre>
 <p><strong>New way</strong></p>
 <p>Using <code>StoreOverlay.create</code></p>
-<pre class="language-dart"><code class="language-dart">  storesOverlay = StoreOverlay.create(Style({
-        "breakPoint": 14,
-        "rules": [
-          {
-            "color": "#1D1D1D",
-            "type": "takeaway",
-            "icon": {
-              "url": "https://images.woosmap.com/starbucks-marker-black.svg",
-              "scaledSize": {"height": 40, "width": 34}
-            },
-            "selectedIcon": {
-              "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
-              "scaledSize": {"height": 50, "width": 43}
-            }
-          }
-        ],
-        "default": {
-          "color": "#008a2f",
-          "size": 8,
-          "minSize": 1,
-          "icon": {
-            "url": "https://images.woosmap.com/starbucks-marker.svg",
-            "scaledSize": {"height": 40, "width": 34}
-          },
-          "selectedIcon": {
-            "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
-            "scaledSize": {"height": 50, "width": 43}
-          }
+<pre class="language-dart"><code class="language-dart">  storesOverlay = StoreOverlay.create(Style(
+    breakPoint: 14,
+    rules: [
+      TypedStyleRule.fromJson({
+        "color": "#1D1D1D",
+        "type": "takeaway",
+        "icon": {
+          "url": "https://images.woosmap.com/starbucks-marker-black.svg",
+          "scaledSize": {"height": 40, "width": 34}
+        },
+        "selectedIcon": {
+          "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+          "scaledSize": {"height": 50, "width": 43}
         }
-      }), _controller!);
+      })
+    ],
+    defaultStyleRule: StyleRule.fromJson({
+      "color": "#008a2f",
+      "size": 8,
+      "minSize": 1,
+      "icon": {
+        "url": "https://images.woosmap.com/starbucks-marker.svg",
+        "scaledSize": {"height": 40, "width": 34}
+      },
+      "selectedIcon": {
+        "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+        "scaledSize": {"height": 50, "width": 43}
+      }
+    })
+  ), _controller!);
 
   storesOverlay?.add();
 </code></pre>

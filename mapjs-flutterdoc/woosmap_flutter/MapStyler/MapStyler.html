@@ -58,7 +58,14 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">MapStyler</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span></li>
+      <span class="name ">MapStyler</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-color">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">color</span>, </span></li>
+<li><span class="parameter" id="-param-gamma"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">gamma</span>, </span></li>
+<li><span class="parameter" id="-param-hue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">hue</span>, </span></li>
+<li><span class="parameter" id="-param-invertLightness"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">invertLightness</span>, </span></li>
+<li><span class="parameter" id="-param-lightness"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">lightness</span>, </span></li>
+<li><span class="parameter" id="-param-saturation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">saturation</span>, </span></li>
+<li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
+<li><span class="parameter" id="-param-weight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">weight</span>}</span></li>
 </ol>)
     </section>
 
@@ -71,9 +78,16 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">MapStyler(Map&lt;String, dynamic&gt; json){
-  MapStyler.fromJson(json);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">MapStyler({
+  this.color,
+  this.gamma,
+  this.hue,
+  this.invertLightness,
+  this.lightness,
+  this.saturation,
+  this.visibility,
+  this.weight
+});</code></pre>
 </section>
 
 

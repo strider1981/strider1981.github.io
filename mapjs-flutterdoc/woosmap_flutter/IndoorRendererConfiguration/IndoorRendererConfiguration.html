@@ -58,22 +58,50 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">IndoorRendererConfiguration</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span></li>
+      <span class="name ">IndoorRendererConfiguration</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-centerMap">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">centerMap</span>, </span></li>
+<li><span class="parameter" id="-param-venue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">venue</span>, </span></li>
+<li><span class="parameter" id="-param-defaultFloor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">defaultFloor</span>, </span></li>
+<li><span class="parameter" id="-param-highlightPOIByRef"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">highlightPOIByRef</span>, </span></li>
+<li><span class="parameter" id="-param-icon"><span class="type-annotation"><a href="../../woosmap_flutter/WoosIcon-class.html">WoosIcon</a>?</span> <span class="parameter-name">icon</span>, </span></li>
+<li><span class="parameter" id="-param-disablePOIInfowindow"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disablePOIInfowindow</span>, </span></li>
+<li><span class="parameter" id="-param-forceExtrusion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">forceExtrusion</span>, </span></li>
+<li><span class="parameter" id="-param-hideLevelSelector"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">hideLevelSelector</span>, </span></li>
+<li><span class="parameter" id="-param-useInfoWindow"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">useInfoWindow</span>, </span></li>
+<li><span class="parameter" id="-param-showRoutingPaths"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">showRoutingPaths</span>, </span></li>
+<li><span class="parameter" id="-param-baseFilter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">baseFilter</span>, </span></li>
+<li><span class="parameter" id="-param-responsive"><span class="type-annotation"><a href="../../woosmap_flutter/IndoorWidgetResponsiveMode.html">IndoorWidgetResponsiveMode</a>?</span> <span class="parameter-name">responsive</span>, </span></li>
+<li><span class="parameter" id="-param-theme"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">theme</span>, </span></li>
+<li><span class="parameter" id="-param-directionsIcons"><span class="type-annotation"><a href="../../woosmap_flutter/WoosIndoorDirectionsIcons-class.html">WoosIndoorDirectionsIcons</a>?</span> <span class="parameter-name">directionsIcons</span>, </span></li>
+<li><span class="parameter" id="-param-levelSelectorPosition"><span class="type-annotation"><a href="../../woosmap_flutter/IndoorLevelSelectorPosition.html">IndoorLevelSelectorPosition</a>?</span> <span class="parameter-name">levelSelectorPosition</span>}</span></li>
 </ol>)
     </section>
 
     
 <section class="desc markdown">
-  <p>Default constructor which accepts JSON data and creates an object from it.</p>
+  <p>Default constructor.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">IndoorRendererConfiguration(Map&lt;String, dynamic&gt; json){
-  IndoorRendererConfiguration.fromJson(json);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">IndoorRendererConfiguration({
+  this.centerMap,
+  this.venue,
+  this.defaultFloor,
+  this.highlightPOIByRef,
+  this.icon,
+  this.disablePOIInfowindow,
+  this.forceExtrusion,
+  this.hideLevelSelector,
+  this.useInfoWindow,
+  this.showRoutingPaths,
+  this.baseFilter,
+  this.responsive,
+  this.theme,
+  this.directionsIcons,
+  this.levelSelectorPosition,
+});</code></pre>
 </section>
 
 
