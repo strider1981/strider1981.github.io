@@ -57,6 +57,10 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>MapOptions object is used to define the properties that can be set on a Map.
+Please refer <a href="https://developers.woosmap.com/products/map-api/reference/1.4/#woosmap.map.MapOptions">docs</a> for more details.</p>
+</section>
 
 
 
@@ -69,13 +73,13 @@
           <span class="name"><a href="../woosmap_flutter/MapOptions/MapOptions.html">MapOptions</a></span><span class="signature">(<span class="parameter" id="-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
         </dt>
         <dd>
-          
+          Default constructor.
         </dd>
         <dt id="MapOptions.fromJson" class="callable">
           <span class="name"><a href="../woosmap_flutter/MapOptions/MapOptions.fromJson.html">MapOptions.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
         </dt>
         <dd>
-          
+          Creates <a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a> object from the given JSON object
         </dd>
     </dl>
   </section>
@@ -91,7 +95,7 @@
 </dt>
 <dd>
   The initial map center to start from.
-Type: LatLng | LatLngLiteral
+Type: <a href="../woosmap_flutter/LatLng-class.html">LatLng</a> | <a href="../woosmap_flutter/LatLngLiteral-class.html">LatLngLiteral</a>
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -137,6 +141,7 @@ Type: LatLng | LatLngLiteral
 <dd>
   This option controls how the gesture are handled Depending on the value when gesture on the map is detected (scroll on desktop,
 one finger pan on mobile) an overlay asking the user to use Cmd or Ctrl while scrolling or use two finger gesture to pan on mobile will be shown.
+Default is <code>auto</code>
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -215,7 +220,7 @@ one finger pan on mobile) an overlay asking the user to use Cmd or Ctrl while sc
 
 </dt>
 <dd>
-  
+  Returns JSON representation of the object.
   
 
 </dd>

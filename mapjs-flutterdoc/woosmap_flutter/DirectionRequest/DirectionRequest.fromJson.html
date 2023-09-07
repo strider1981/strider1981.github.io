@@ -64,7 +64,7 @@
 
     
 <section class="desc markdown">
-  <p>Created <a href="../../woosmap_flutter/DirectionRequest-class.html">DirectionRequest</a> object from JSON Data</p>
+  <p>Creates <a href="../../woosmap_flutter/DirectionRequest-class.html">DirectionRequest</a> object from JSON Data</p>
 </section>
 
 
@@ -75,7 +75,7 @@
   origin = LatLng.fromJson(json[&#39;origin&#39;]);
   destination = LatLng.fromJson(json[&#39;destination&#39;]);
   if (json[&#39;unitSystem&#39;] != null) {
-    unitSystem = UnitSystem.impartial.string(json[&#39;unitSystem&#39;]);
+    unitSystem = UnitSystem.imperial.string(json[&#39;unitSystem&#39;]);
   }
   if (json[&#39;travelMode&#39;] != null) {
     travelMode = TravelMode.bicycling.string(json[&#39;travelMode&#39;]);

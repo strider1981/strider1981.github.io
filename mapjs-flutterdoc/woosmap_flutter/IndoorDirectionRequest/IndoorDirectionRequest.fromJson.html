@@ -64,7 +64,8 @@
 
     
 <section class="desc markdown">
-  <p>Created <a href="../../woosmap_flutter/IndoorDirectionRequest-class.html">IndoorDirectionRequest</a> object from JSON Data</p>
+  <p>Creates <a href="../../woosmap_flutter/IndoorDirectionRequest-class.html">IndoorDirectionRequest</a> object from JSON Data
+Check <a href="https://developers.woosmap.com/products/indoor-api/indoor-js-api/direction-service/#">docs</a> for JSON structure.</p>
 </section>
 
 
@@ -83,7 +84,9 @@
     }
     destinationLevel = json[&#39;destinationLevel&#39;];
     language = json[&#39;language&#39;];
-    units = json[&#39;units&#39;];
+    if (json[&#39;units&#39;].toString() == UnitSystem.imperial.value) {
+      units = UnitSystem.imperial;
+    }
     mode = json[&#39;mode&#39;];
     originId = json[&#39;originId&#39;];
     destinationId = json[&#39;destinationId&#39;];
