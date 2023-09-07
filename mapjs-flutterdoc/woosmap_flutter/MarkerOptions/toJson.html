@@ -80,8 +80,8 @@
   if (anchorPoint != null) {
     data[&#39;anchorPoint&#39;] = anchorPoint?.toJson();
   }
-  data[&#39;clickable&#39;] = clickable!;
-  data[&#39;draggable&#39;] = draggable!;
+  data[&#39;clickable&#39;] = clickable ?? true;
+  data[&#39;draggable&#39;] = draggable ?? false;
 
   if (icon != null){
     if (icon is String){
