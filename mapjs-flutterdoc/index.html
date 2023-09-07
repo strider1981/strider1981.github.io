@@ -78,6 +78,11 @@
 <ol>
 <li>Instantiating a WoosmapMapViewWidget.</li>
 </ol>
+<blockquote>
+<p><strong>Note:</strong> Default constructor of <code>WoosmapMapViewWidget</code> is deprecated. Though it will work the way it used to in past, we suggest you use new <code>WoosmapMapViewWidget.create</code> to create <code>WoosmapMapViewWidget</code> object.</p>
+</blockquote>
+<p><strong>Old way</strong></p>
+<p>Using default constructor</p>
 <pre class="language-dart"><code>    WoosmapMapViewWidget(
         wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
         onRef: (p0) async {
@@ -87,6 +92,58 @@
           "center": {"lat": 19.115932, "lng": 72.907852},
           "zoom": 10
         },
+        click: (message) {
+          debugPrint("idle");
+        },
+        bounds_changed: () {
+          debugPrint("idle");
+        },
+        center_changed: () {
+          debugPrint("idle");
+        },
+        dblclick: (m) {
+          debugPrint("idle");
+        },
+        drag: () {
+          debugPrint("idle");
+        },
+        dragend: () {
+          debugPrint("idle");
+        },
+        dragstart: () {
+          debugPrint("idle");
+        },
+        idle: () {
+          debugPrint("idle");
+        },
+        mousemove: (x) {
+          debugPrint("idle");
+        },
+        mouseout: (x) {
+          debugPrint("idle");
+        },
+        mouseover: (x) {
+          debugPrint("idle");
+        },
+        rightclick: (x) {
+          debugPrint("idle");
+        },
+        zoom_changed: () {
+          debugPrint("idle");
+        },
+      )
+</code></pre>
+<p><strong>New Way</strong></p>
+<p>Using <code>WoosmapMapViewWidget.create</code> constructor</p>
+<pre class="language-dart"><code>    WoosmapMapViewWidget.create(
+        wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+        onRef: (p0) async {
+          _controller = p0;
+        },
+        mapOptions: MapOptions({
+          "center": {"lat": 19.115932, "lng": 72.907852},
+          "zoom": 10
+        }),
         click: (message) {
           debugPrint("idle");
         },
@@ -214,7 +271,7 @@
 <h3 id="building-directions-request">Building Directions Request</h3>
 <p>You can calculate directions and plot by using the <code>WoosmapMapViewWidget.route</code> method. This method is an interface to the Route endpoint of Woosmap Distance API. This service compute travel distance, time and path for a pair of origin and destination.</p>
 <p>You may either display these directions results using custom overlays or use the <code>WoosmapMapViewWidget.setRoute</code> method to render these results.</p>
-<pre class="language-dart"><code class="language-dart">    WoosmapMapViewWidget(
+<pre class="language-dart"><code class="language-dart">    WoosmapMapViewWidget.create(
         wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
         onRef: (p0) async {
           _controller = p0;
@@ -226,15 +283,13 @@
         routeIndex_changed: (index) {
             debugPrint(jsonEncode(index));
         },
-      )))
+      )
 </code></pre>
 <p>To display route on map.</p>
-<pre class="language-dart"><code class="language-dart">    _controller
-            ?.route(DirectionRequest(
+<pre class="language-dart"><code class="language-dart">    _controller?.route(DirectionRequest({
           "origin": {"lat": 48.86288, "lng": 2.34946},
           "destination": {"lat": 52.52457, "lng": 13.42347}
-        }))
-            .then((route) {
+        }).then((route) {
           _controller?.setRoute(route: route);
         });
 </code></pre>
@@ -246,6 +301,10 @@
 <ol>
 <li>Instantiating a WoosmapMapViewWidget.</li>
 </ol>
+<blockquote>
+<p><strong>Note:</strong> Default constructor of <code>WoosmapMapViewWidget</code> is deprecated. We suggest you use new <code>WoosmapMapViewWidget.create</code> which accepts <code>IndoorWidgetConfiguration</code> and <code>IndoorRendererConfiguration</code> objects.</p>
+</blockquote>
+<p><strong>Old way</strong></p>
 <pre class="language-dart"><code>WoosmapMapViewWidget(
   wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
   widget: true,
@@ -279,7 +338,43 @@
   indoor_highlight_step: (message) {
     debugPrint(jsonEncode(message));
   },
-)))
+);
+</code></pre>
+<p><strong>New way</strong></p>
+<pre class="language-dart"><code>WoosmapMapViewWidget.create(
+  wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+  widget: true,
+  indoorRendererConfiguration: IndoorRendererConfiguration({
+    "centerMap": true,
+    "defaultFloor": 3
+  }),
+  indoorWidgetConfiguration: IndoorWidgetConfiguration({
+    "units": "metric",
+    "ui": {
+      "primaryColor": "#318276",
+      "secondaryColor": "#004651",
+      "tertiaryColor": "#E20813"
+    },
+  }),
+  onRef: (p0) async {
+    _controller = p0;
+  },
+  indoor_venue_loaded: (message) {
+    debugPrint(jsonEncode(message));
+  },
+  indoor_feature_selected: (message) {
+    debugPrint(jsonEncode(message));
+  },
+  indoor_level_changed: (message) {
+    debugPrint("$message");
+  },
+  indoor_user_location: (message) {
+    debugPrint(jsonEncode(message));
+  },
+  indoor_highlight_step: (message) {
+    debugPrint(jsonEncode(message));
+  },
+);
 </code></pre>
 <ol start="2">
 <li>Accessing various functions in <code>WoosmapMapViewWidget</code></li>
@@ -322,8 +417,25 @@
 <ul>
 <li>Fetching and displaying direction</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> Class <code>DirectionParameter</code> is deprecated. We suggest you use new <code>IndoorDirectionRequest</code> instead.</p>
+</blockquote>
 <p>By using Lat/Lng</p>
-<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+<pre class="language-dart"><code class="language-dart">///Old way
+_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "origin": {"lat": 43.60664187325, "lng": 3.921814671575},
+          "originLevel": 3,
+          "destination": {"lat": 43.60665215333, "lng": 3.921680093435},
+          "destinationLevel": 3,
+          "language": "en",
+          "units": "metric",
+          "mode": "wheelchair"
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+
+///New way
+_controller.directions(IndoorDirectionRequest({
           "venueId": 'mtp',
           "origin": {"lat": 43.60664187325, "lng": 3.921814671575},
           "originLevel": 3,
@@ -336,7 +448,19 @@
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <p>By using Poi ID</p>
-<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+<pre class="language-dart"><code class="language-dart">///Old way
+_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "originId": 614309,
+          "destinationId": 614165,
+          "language": "en",
+          "units": "metric",
+          "mode": "wheelchair"
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+
+///New way
+_controller.directions(IndoorDirectionRequest({
           "venueId": 'mtp',
           "originId": 614309,
           "destinationId": 614165,
@@ -347,7 +471,19 @@
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <p>By using Poi Ref</p>
-<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+<pre class="language-dart"><code class="language-dart">///Old way
+_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "originId": "ref:meeting001",
+          "destinationId": "ref:tropiques",
+          "language": "en",
+          "units": "metric",
+          "mode": "wheelchair"
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+
+///New way
+_controller.directions(IndoorDirectionRequest({
           "venueId": 'mtp',
           "originId": "ref:meeting001",
           "destinationId": "ref:tropiques",
@@ -359,7 +495,17 @@
 </code></pre>
 <p>By using WayPoint
 Valid Waypoint formats are <code>lat,lng,level</code> or <code>poiid</code> or ref:<code>poiref</code></p>
-<pre class="language-dart"><code class="language-dart">_controller.directions(DirectionParameter.fromJson({
+<pre class="language-dart"><code class="language-dart">///Old way
+_controller.directions(DirectionParameter.fromJson({
+          "venueId": 'mtp',
+          "originId": "ref:meeting001",
+          "destinationId": "ref:tropiques",
+          "waypoints": ["ref:meeting001", "ref:tropiques"]
+        }))
+        .then((route) =&gt; {_controller.setDirections(route)});
+
+///New way
+_controller.directions(IndoorDirectionRequest.fromJson({
           "venueId": 'mtp',
           "originId": "ref:meeting001",
           "destinationId": "ref:tropiques",
@@ -367,10 +513,140 @@ Valid Waypoint formats are <code>lat,lng,level</code> or <code>poiid</code> or r
         }))
         .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
+<h3 id="how-to-add-a-store-overlay">How to add a store overlay</h3>
+<ol>
+<li>Instantiating a WoosmapMapViewWidget.</li>
+</ol>
+<pre class="language-dart"><code class="language-dart">  WoosmapMapViewWidget.create(
+        wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+        onRef: (p0) async {
+          _controller = p0;
+        },
+        mapOptions: MapOptions({
+          "center": {"lat": 19.115932, "lng": 72.907852},
+          "zoom": 10
+        }),
+        click: (message) {
+          debugPrint("idle");
+        },
+        bounds_changed: () {
+          debugPrint("idle");
+        },
+        center_changed: () {
+          debugPrint("idle");
+        },
+        dblclick: (m) {
+          debugPrint("idle");
+        },
+        drag: () {
+          debugPrint("idle");
+        },
+        dragend: () {
+          debugPrint("idle");
+        },
+        dragstart: () {
+          debugPrint("idle");
+        },
+        idle: () {
+          debugPrint("idle");
+        },
+        mousemove: (x) {
+          debugPrint("idle");
+        },
+        mouseout: (x) {
+          debugPrint("idle");
+        },
+        mouseover: (x) {
+          debugPrint("idle");
+        },
+        rightclick: (x) {
+          debugPrint("idle");
+        },
+        zoom_changed: () {
+          debugPrint("idle");
+        },
+    );
+</code></pre>
+<ol start="2">
+<li>Configuring store overlay.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Default constructor of <code>StoreOverlay</code> is deprecated. Though it will work the way it used to in past, we suggest you use new <code>StoreOverlay.create</code> to create <code>StoreOverlay</code> object.</p>
+</blockquote>
+<p><strong>Old way</strong></p>
+<p>Using default constructor</p>
+<pre class="language-dart"><code class="language-dart">  storesOverlay = StoreOverlay({
+        "breakPoint": 14,
+        "rules": [
+          {
+            "color": "#1D1D1D",
+            "type": "takeaway",
+            "icon": {
+              "url": "https://images.woosmap.com/starbucks-marker-black.svg",
+              "scaledSize": {"height": 40, "width": 34}
+            },
+            "selectedIcon": {
+              "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+              "scaledSize": {"height": 50, "width": 43}
+            }
+          }
+        ],
+        "default": {
+          "color": "#008a2f",
+          "size": 8,
+          "minSize": 1,
+          "icon": {
+            "url": "https://images.woosmap.com/starbucks-marker.svg",
+            "scaledSize": {"height": 40, "width": 34}
+          },
+          "selectedIcon": {
+            "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+            "scaledSize": {"height": 50, "width": 43}
+          }
+        }
+      }, _controller!);
+
+  storesOverlay?.add();
+</code></pre>
+<p><strong>New way</strong></p>
+<p>Using <code>StoreOverlay.create</code></p>
+<pre class="language-dart"><code class="language-dart">  storesOverlay = StoreOverlay.create(Style({
+        "breakPoint": 14,
+        "rules": [
+          {
+            "color": "#1D1D1D",
+            "type": "takeaway",
+            "icon": {
+              "url": "https://images.woosmap.com/starbucks-marker-black.svg",
+              "scaledSize": {"height": 40, "width": 34}
+            },
+            "selectedIcon": {
+              "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+              "scaledSize": {"height": 50, "width": 43}
+            }
+          }
+        ],
+        "default": {
+          "color": "#008a2f",
+          "size": 8,
+          "minSize": 1,
+          "icon": {
+            "url": "https://images.woosmap.com/starbucks-marker.svg",
+            "scaledSize": {"height": 40, "width": 34}
+          },
+          "selectedIcon": {
+            "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
+            "scaledSize": {"height": 50, "width": 43}
+          }
+        }
+      }), _controller!);
+
+  storesOverlay?.add();
+</code></pre>
 <h3 id="android-platform-settings">Android Platform Settings</h3>
 <p>This plugin uses Platform Views to embed the Android’s WebView within the Flutter app.</p>
 <p>You should however make sure to set the correct <code>minSdkVersion</code> in <code>android/app/build.gradle</code> if it was previously lower than 19:</p>
-<pre class="language-dart"><code>android {
+<pre class="language-gradle"><code class="language-gradle">android {
   compileSdkVersion 33
     defaultConfig {
         minSdkVersion 19
@@ -379,7 +655,7 @@ Valid Waypoint formats are <code>lat,lng,level</code> or <code>poiid</code> or r
 }
 </code></pre>
 <p>Add the following permission inside the manifest tag in the <code>AndroidManifest.xml</code> file located at <code>android/app/src/main</code>.</p>
-<pre class="language-dart"><code>&lt;uses-permission android:name="android.permission.INTERNET"/&gt;
+<pre class="language-xml"><code class="language-xml">&lt;uses-permission android:name="android.permission.INTERNET"/&gt;
 </code></pre>
 <p>For help getting started with Flutter development, view the
 <a href="https://flutter.dev/docs">online documentation</a>, which offers tutorials,
