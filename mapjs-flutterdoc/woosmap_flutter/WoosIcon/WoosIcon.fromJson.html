@@ -74,22 +74,43 @@
   <pre class="language-dart"><code class="language-dart">WoosIcon.fromJson(Map&lt;String, dynamic&gt; json) {
   url = json[&#39;url&#39;].toString();
   if (json[&#39;scaledSize&#39;] != null) {
-    scaledSize = WoosSize.fromJson(json[&#39;scaledSize&#39;]);
+    if (json[&#39;scaledSize&#39;] is Map&lt;String, dynamic&gt;){
+      scaledSize = WoosSize.fromJson(json[&#39;scaledSize&#39;]);
+    }
+    else{
+      Util.showWarning(&quot;`scaledSize` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   } else {
     scaledSize = null;
   }
+
   if (json[&#39;size&#39;] != null) {
-    size = WoosSize.fromJson(json[&#39;size&#39;]);
+    if (json[&#39;size&#39;] is Map&lt;String, dynamic&gt;){
+      size = WoosSize.fromJson(json[&#39;size&#39;]);
+    }
+    else{
+      Util.showWarning(&quot;`size` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   } else {
     size = null;
   }
   if (json[&#39;anchor&#39;] != null) {
-    anchor = WoosPoint.fromJson(json[&#39;anchor&#39;]);
+    if (json[&#39;anchor&#39;] is Map&lt;String, dynamic&gt;){
+      anchor = WoosPoint.fromJson(json[&#39;anchor&#39;]);
+    }
+    else{
+      Util.showWarning(&quot;`anchor` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   } else {
     anchor = null;
   }
   if (json[&#39;labelOrigin&#39;] != null) {
-    labelOrigin = WoosPoint.fromJson(json[&#39;labelOrigin&#39;]);
+    if (json[&#39;labelOrigin&#39;] is Map&lt;String, dynamic&gt;){
+      labelOrigin = WoosPoint.fromJson(json[&#39;labelOrigin&#39;]);
+    }
+    else{
+      Util.showWarning(&quot;`icon` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   } else {
     labelOrigin = null;
   }

@@ -72,35 +72,46 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">WoosmMarkerLabelOptions.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;className&#39;] != null) {
     className = json[&#39;className&#39;].toString();
+    isPropertySet = true;
   } else {
     className = null;
   }
   if (json[&#39;color&#39;] != null) {
     color = json[&#39;color&#39;].toString();
+    isPropertySet = true;
   } else {
     color = null;
   }
   if (json[&#39;fontFamily&#39;] != null) {
     fontFamily = json[&#39;fontFamily&#39;].toString();
+    isPropertySet = true;
   } else {
     fontFamily = null;
   }
   if (json[&#39;fontSize&#39;] != null) {
     fontSize = json[&#39;fontSize&#39;].toString();
+    isPropertySet = true;
   } else {
     fontSize = null;
   }
   if (json[&#39;fontWeight&#39;] != null) {
     fontWeight = json[&#39;fontWeight&#39;].toString();
+    isPropertySet = true;
   } else {
     fontWeight = null;
   }
   if (json[&#39;text&#39;] != null) {
     text = json[&#39;text&#39;].toString();
+    isPropertySet = true;
   } else {
     text = null;
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for WoosmMarkerLabelOptions.&quot;);
   }
 }</code></pre>
 </section>

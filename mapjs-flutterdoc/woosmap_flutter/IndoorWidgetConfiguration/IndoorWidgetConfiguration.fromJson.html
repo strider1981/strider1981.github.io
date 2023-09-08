@@ -72,34 +72,51 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">IndoorWidgetConfiguration.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;ui&#39;] != null) {
-    ui = IndoorWidgetConfigurationUI.fromJson(json[&#39;ui&#39;]);
+    if (json[&#39;ui&#39;] is Map&lt;String, dynamic&gt;){
+      ui = IndoorWidgetConfigurationUI.fromJson(json[&#39;ui&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`ui` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;units&#39;] != null) {
     if (json[&#39;units&#39;].toString() == &#39;imperial&#39;){
       units = UnitSystem.imperial;
+      isPropertySet = true;
     }
   }
 
   if (json[&#39;baseFilter&#39;] != null) {
     baseFilter = json[&#39;baseFilter&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;directionsMode&#39;] != null) {
     directionsMode = json[&#39;directionsMode&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;avoidZones&#39;] != null) {
     avoidZones = json[&#39;avoidZones&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;autocompleteWithDistance&#39;] != null) {
     autocompleteWithDistance = json[&#39;autocompleteWithDistance&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;navigationMode&#39;] != null) {
     navigationMode = json[&#39;navigationMode&#39;] as bool;
+    isPropertySet = true;
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for IndoorWidgetConfiguration.&quot;);
   }
 }</code></pre>
 </section>

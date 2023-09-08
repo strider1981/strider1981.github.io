@@ -72,54 +72,80 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MarkerOptions.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;anchorPoint&#39;] != null) {
-    anchorPoint = WoosPoint.fromJson(json[&#39;anchorPoint&#39;]);
+    if (json[&#39;anchorPoint&#39;] is Map&lt;String, dynamic&gt;){
+      anchorPoint = WoosPoint.fromJson(json[&#39;anchorPoint&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`anchorPoint` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;clickable&#39;] != null) {
     clickable = json[&#39;clickable&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;draggable&#39;] != null) {
     draggable = json[&#39;draggable&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;icon&#39;] != null) {
     if (json[&#39;icon&#39;] is String){
-      icon = json[&#39;icon&#39;].toString();
+      _icon = json[&#39;icon&#39;].toString();
+      isPropertySet = true;
     } else if (json[&#39;icon&#39;] is Map&lt;String, dynamic&gt;){
-      icon = WoosIcon.fromJson(json[&#39;icon&#39;]);
+      _icon = WoosIcon.fromJson(json[&#39;icon&#39;]);
+      isPropertySet = true;
     }
     else{
-      throw const FormatException(&#39;icon should either be a string or instance of Map object.&#39;);
+      Util.showWarning(&#39;icon should either be a string or json representation of WoosIcon object.&#39;);
     }
   }
 
   if (json[&#39;label&#39;] != null) {
     if (json[&#39;label&#39;] is String){
-      label = json[&#39;label&#39;].toString();
+      _label = json[&#39;label&#39;].toString();
+      isPropertySet = true;
     } else if (json[&#39;label&#39;] is Map&lt;String, dynamic&gt;){
-      label = WoosmMarkerLabelOptions.fromJson(json[&#39;label&#39;]);
+      _label = WoosmMarkerLabelOptions.fromJson(json[&#39;label&#39;]);
+      isPropertySet = true;
     }
     else{
-      throw const FormatException(&#39;label should either be a string or instance of Map object.&#39;);
+      Util.showWarning(&#39;label should either be a string or json representation of WoosmMarkerLabelOptions object.&#39;);
     }
   }
 
   if (json[&#39;opacity&#39;] != null) {
     opacity = json[&#39;opacity&#39;].toDouble();
+    isPropertySet = true;
   }
 
   if (json[&#39;position&#39;] != null) {
-    position = LatLng.fromJson(json[&#39;position&#39;]);
+    if (json[&#39;position&#39;] is Map&lt;String, dynamic&gt;){
+      position = LatLng.fromJson(json[&#39;position&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`position` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;title&#39;] != null) {
     title = json[&#39;title&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;visible&#39;] != null) {
     visible = json[&#39;visible&#39;] as bool;
+    isPropertySet = true;
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for MarkerOptions.&quot;);
   }
 
 }</code></pre>

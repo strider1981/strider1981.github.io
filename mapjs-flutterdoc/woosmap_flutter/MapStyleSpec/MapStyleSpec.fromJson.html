@@ -72,20 +72,33 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MapStyleSpec.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;elementType&#39;] != null) {
     elementType = json[&#39;elementType&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;featureType&#39;] != null) {
     featureType = json[&#39;featureType&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;stylers&#39;] != null) {
-    List&lt;dynamic&gt; stylersArray = json[&#39;stylers&#39;];
-    for(Map&lt;String, dynamic&gt; item in stylersArray){
-      MapStyler styler = MapStyler.fromJson(item);
-      stylers!.add(styler);
+    if (json[&#39;stylers&#39;] is List&lt;dynamic&gt;){
+      List&lt;dynamic&gt; stylersArray = json[&#39;stylers&#39;];
+      for(Map&lt;String, dynamic&gt; item in stylersArray){
+        MapStyler styler = MapStyler.fromJson(item);
+        stylers!.add(styler);
+        isPropertySet = true;
+      }
     }
+    else{
+      Util.showWarning(&quot;`stylers` should be an object of List&lt;dynamic&gt;&quot;);
+    }
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for MapStyleSpec.&quot;);
   }
 }</code></pre>
 </section>

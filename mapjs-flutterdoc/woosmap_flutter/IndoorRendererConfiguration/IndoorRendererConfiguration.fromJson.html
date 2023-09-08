@@ -72,72 +72,104 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">IndoorRendererConfiguration.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;centerMap&#39;] != null) {
     centerMap = json[&#39;centerMap&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;venue&#39;] != null) {
     venue = json[&#39;venue&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;defaultFloor&#39;] != null) {
     defaultFloor = json[&#39;defaultFloor&#39;] as int;
+    isPropertySet = true;
   }
 
   if (json[&#39;highlightPOIByRef&#39;] != null) {
     highlightPOIByRef = json[&#39;highlightPOIByRef&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;icon&#39;] != null) {
-    icon = WoosIcon.fromJson(json[&#39;highlightPOIByRef&#39;]);
+    if (json[&#39;icon&#39;] is Map&lt;String, dynamic&gt;){
+      icon = WoosIcon.fromJson(json[&#39;icon&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`icon` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;disablePOIInfowindow&#39;] != null) {
     disablePOIInfowindow = json[&#39;disablePOIInfowindow&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;forceExtrusion&#39;] != null) {
     forceExtrusion = json[&#39;forceExtrusion&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;hideLevelSelector&#39;] != null) {
     hideLevelSelector = json[&#39;hideLevelSelector&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;useInfoWindow&#39;] != null) {
     useInfoWindow = json[&#39;useInfoWindow&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;showRoutingPaths&#39;] != null) {
     showRoutingPaths = json[&#39;showRoutingPaths&#39;] as bool;
+    isPropertySet = true;
   }
 
   if (json[&#39;baseFilter&#39;] != null) {
     baseFilter = json[&#39;baseFilter&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;responsive&#39;] != null) {
     if (json[&#39;responsive&#39;].toString() == &#39;desktop&#39;){
       responsive = IndoorWidgetResponsiveMode.desktop;
+      isPropertySet = true;
     } else if (json[&#39;responsive&#39;].toString() == &#39;mobile&#39;){
       responsive = IndoorWidgetResponsiveMode.mobile;
+      isPropertySet = true;
     }
   }
 
   if (json[&#39;theme&#39;] != null) {
     theme = json[&#39;theme&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;directionsIcons&#39;] != null) {
-    directionsIcons = WoosIndoorDirectionsIcons.fromJson(json[&#39;directionsIcons&#39;]);
+    if (json[&#39;directionsIcons&#39;] is Map&lt;String, dynamic&gt;){
+      directionsIcons = WoosIndoorDirectionsIcons.fromJson(json[&#39;directionsIcons&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`directionsIcons` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;levelSelectorPosition&#39;] != null) {
     if (json[&#39;levelSelectorPosition&#39;].toString() == &#39;right&#39;){
       levelSelectorPosition = IndoorLevelSelectorPosition.right;
+      isPropertySet = true;
     } else if (json[&#39;levelSelectorPosition&#39;].toString() == &#39;top&#39;){
       levelSelectorPosition = IndoorLevelSelectorPosition.top;
+      isPropertySet = true;
     }
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for IndoorRendererConfiguration.&quot;);
   }
 }</code></pre>
 </section>

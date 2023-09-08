@@ -72,23 +72,46 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Style.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;breakPoint&#39;] != null) {
     breakPoint = json[&#39;breakPoint&#39;] as int;
+    isPropertySet = true;
   }
 
   if (json[&#39;default&#39;] != null) {
-    defaultStyleRule = StyleRule.fromJson(json[&#39;default&#39;]);
+    if (json[&#39;default&#39;] is Map&lt;String, dynamic&gt;){
+      defaultStyleRule = StyleRule.fromJson(json[&#39;default&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`default` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;defaultStyleRule&#39;] != null) {
-    defaultStyleRule = StyleRule.fromJson(json[&#39;defaultStyleRule&#39;]);
+    if (json[&#39;defaultStyleRule&#39;] is Map&lt;String, dynamic&gt;){
+      defaultStyleRule = StyleRule.fromJson(json[&#39;defaultStyleRule&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`defaultStyleRule` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
 
   if (json[&#39;rules&#39;] != null) {
-    List&lt;Map&lt;String, dynamic&gt;&gt; ruleList = json[&#39;rules&#39;];
-    for(Map&lt;String, dynamic&gt; item in ruleList){
-      rules?.add(TypedStyleRule.fromJson(item));
+    if (json[&#39;rules&#39;] is List&lt;Map&lt;String, dynamic&gt;&gt;){
+      List&lt;Map&lt;String, dynamic&gt;&gt; ruleList = json[&#39;rules&#39;];
+      for(Map&lt;String, dynamic&gt; item in ruleList){
+        rules?.add(TypedStyleRule.fromJson(item));
+        isPropertySet = true;
+      }
     }
+    else{
+      Util.showWarning(&quot;`rules` should be an object of List&lt;Map&lt;String, dynamic&gt;&gt;&quot;);
+    }
+  }
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for Style.&quot;);
   }
 }</code></pre>
 </section>

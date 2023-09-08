@@ -75,11 +75,11 @@ Check <a href="https://developers.woosmap.com/products/indoor-api/indoor-js-api/
   <pre class="language-dart"><code class="language-dart">IndoorDirectionRequest.fromJson(Map&lt;String, dynamic&gt; json) {
   try {
     venueId = json[&#39;venueId&#39;];
-    if (json[&#39;origin&#39;] != null) {
+    if (json[&#39;origin&#39;] != null &amp;&amp; json[&#39;origin&#39;] is Map&lt;String, dynamic&gt;) {
       origin = LatLng.fromJson(json[&#39;origin&#39;]);
     }
     originLevel = json[&#39;originLevel&#39;];
-    if (json[&#39;destination&#39;] != null) {
+    if (json[&#39;destination&#39;] != null &amp;&amp; json[&#39;destination&#39;] is Map&lt;String, dynamic&gt;) {
       destination = LatLng.fromJson(json[&#39;destination&#39;]);
     }
     destinationLevel = json[&#39;destinationLevel&#39;];
@@ -90,14 +90,14 @@ Check <a href="https://developers.woosmap.com/products/indoor-api/indoor-js-api/
     mode = json[&#39;mode&#39;];
     if (json[&#39;originId&#39;] != null){
       if (json[&#39;originId&#39;] is String || json[&#39;originId&#39;] is int){
-        originId = json[&#39;originId&#39;];
+        _originId = json[&#39;originId&#39;];
       } else {
         throw const FormatException(&#39;originId should either be a string or integer.&#39;);
       }
     }
     if (json[&#39;destinationId&#39;] != null){
       if (json[&#39;destinationId&#39;] is String || json[&#39;destinationId&#39;] is int){
-        destinationId = json[&#39;destinationId&#39;];
+        _destinationId = json[&#39;destinationId&#39;];
       } else {
         throw const FormatException(&#39;destinationId should either be a string or integer.&#39;);
       }

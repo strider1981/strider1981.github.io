@@ -56,26 +56,64 @@
 <h1><span class="kind-property">label</span> property 
 </h1></div>
 
-        <section class="multi-line-signature">
-          
-          dynamic
-          <span class="name ">label</span>
-          <div class="features"><span class="feature">read / write</span></div>
 
-        </section>
         
+<section id="getter">
+
+<section class="multi-line-signature">
+  
+  <span class="returntype">dynamic</span>
+  <span class="name ">label</span>
+  
+
+</section>
+
+
 <section class="desc markdown">
   <p>Adds a letter or number label inside a marker.
 A string or a WoosmMarkerLabelOptions object
 (WoosmMarkerLabelOptions object Specification)<code>https://pub.dev/documentation/woosmap_flutter/latest/woosmap_flutter/WoosmMarkerLabelOptions-class.html</code></p>
 </section>
 
-        
+
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">dynamic label;</code></pre>
+  <pre class="language-dart"><code class="language-dart">dynamic get label {
+  return _label;
+}</code></pre>
 </section>
 
+</section>
+
+
+        
+<section id="setter">
+
+<section class="multi-line-signature">
+  
+  <span class="returntype">void</span>
+  <span class="name ">label=</span><span class="signature">(<wbr><span class="parameter" id="label=-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)</span>
+  
+
+</section>
+
+
+
+
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">set label(dynamic value){
+  if (value != null &amp;&amp; (value is! String || value is! WoosmMarkerLabelOptions)){
+    throw ArgumentError(
+              &#39;icon should be either string or WoosIcon object&#39;);
+  }
+  else{
+    _label = value;
+  }
+}</code></pre>
+</section>
+
+</section>
 
   </div> <!-- /.main-content -->
 

@@ -87,16 +87,33 @@
     {required this.venueId,
     this.origin,
     this.originLevel,
-    this.originId,
+    dynamic originId,
     this.destination,
     this.destinationLevel,
-    this.destinationId,
+    dynamic destinationId,
     this.language,
     this.units,
     this.mode,
     this.waypoints,
     this.avoid,
-    this.optimize});</code></pre>
+    this.optimize}){
+
+  if (originId != null &amp;&amp; (originId is! String || originId is! int)){
+    throw ArgumentError(
+              &#39;originId should be either string or int&#39;);
+  }
+  else{
+    _originId = originId;
+  }
+
+  if (destinationId != null &amp;&amp; (destinationId is! String || destinationId is! int)){
+    throw ArgumentError(
+              &#39;destinationId should be either string or int&#39;);
+  }
+  else{
+    _destinationId = destinationId;
+  }
+}</code></pre>
 </section>
 
 

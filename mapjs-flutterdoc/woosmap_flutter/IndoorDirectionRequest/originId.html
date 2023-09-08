@@ -56,24 +56,62 @@
 <h1><span class="kind-property">originId</span> property 
 </h1></div>
 
-        <section class="multi-line-signature">
-          
-          dynamic
-          <span class="name ">originId</span>
-          <div class="features"><span class="feature">read / write</span></div>
 
-        </section>
         
-<section class="desc markdown">
-  <p>&lt;<poiid>&gt; or &lt;<a href="ref:poiRef">ref:poiRef</a>&gt;</poiid></p>
+<section id="getter">
+
+<section class="multi-line-signature">
+  
+  <span class="returntype">dynamic</span>
+  <span class="name ">originId</span>
+  
+
 </section>
 
-        
+
+<section class="desc markdown">
+  <p>Either &lt;<poiid>&gt; or &lt;<a href="ref:poiRef">ref:poiRef</a>&gt;</poiid></p>
+</section>
+
+
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">dynamic originId;</code></pre>
+  <pre class="language-dart"><code class="language-dart">dynamic get originId {
+  return _originId;
+}</code></pre>
 </section>
 
+</section>
+
+
+        
+<section id="setter">
+
+<section class="multi-line-signature">
+  
+  <span class="returntype">void</span>
+  <span class="name ">originId=</span><span class="signature">(<wbr><span class="parameter" id="originId=-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)</span>
+  
+
+</section>
+
+
+
+
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">set originId(dynamic value) {
+  if (value != null &amp;&amp; (value is! String || value is! int)){
+    throw ArgumentError(
+              &#39;originId should be either string or int&#39;);
+  }
+  else{
+    _originId = value;
+  }
+}</code></pre>
+</section>
+
+</section>
 
   </div> <!-- /.main-content -->
 

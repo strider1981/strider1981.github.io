@@ -83,28 +83,28 @@
   data[&#39;clickable&#39;] = clickable ?? true;
   data[&#39;draggable&#39;] = draggable ?? false;
 
-  if (icon != null){
-    if (icon is String){
-      data[&#39;icon&#39;] = icon;
+  if (_icon != null){
+    if (_icon is String){
+      data[&#39;icon&#39;] = _icon;
     }
-    else{
-      data[&#39;icon&#39;] = icon.toJson();
+    else if (_icon is WoosIcon){
+      data[&#39;icon&#39;] = _icon.toJson();
     }
   }
 
-  if (label != null){
-    if (label is String){
-      data[&#39;label&#39;] = label;
+  if (_label != null){
+    if (_label is String){
+      data[&#39;label&#39;] = _label;
     }
-    else{
-      data[&#39;label&#39;] = label.toJson();
+    else if (_label is WoosmMarkerLabelOptions){
+      data[&#39;label&#39;] = _label.toJson();
     }
   }
   if (opacity != null) {
     data[&#39;opacity&#39;] = opacity!;
   }
   if (position != null) {
-    data[&#39;position&#39;] = position!.toJson();
+    data[&#39;position&#39;] = position?.toJson();
   }
   if (title != null) {
     data[&#39;title&#39;] = title!;

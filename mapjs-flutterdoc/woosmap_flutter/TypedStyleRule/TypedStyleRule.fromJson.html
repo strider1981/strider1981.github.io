@@ -69,20 +69,28 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">TypedStyleRule.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;color&#39;] != null) {
     color = json[&#39;color&#39;].toString();
+    isPropertySet = true;
   }
 
   if (json[&#39;type&#39;] != null) {
     type = json[&#39;type&#39;].toString();
+    isPropertySet = true;
   }
 
-  if (json[&#39;icon&#39;] != null) {
+  if (json[&#39;icon&#39;] != null &amp;&amp; json[&#39;icon&#39;] is Map&lt;String, dynamic&gt;) {
     icon = WoosIcon.fromJson(json[&#39;icon&#39;]);
+    isPropertySet = true;
   }
 
-  if (json[&#39;selectedIcon&#39;] != null) {
+  if (json[&#39;selectedIcon&#39;] != null &amp;&amp; json[&#39;selectedIcon&#39;] is Map&lt;String, dynamic&gt;) {
     selectedIcon = WoosIcon.fromJson(json[&#39;selectedIcon&#39;]);
+    isPropertySet = true;
+  }
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for TypedStyleRule.&quot;);
   }
 }</code></pre>
 </section>

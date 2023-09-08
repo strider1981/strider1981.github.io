@@ -72,35 +72,69 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MapOptions.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;center&#39;] != null) {
-    center = LatLng.fromJson(json[&#39;center&#39;]);
+    if (json[&#39;center&#39;] is Map&lt;String, dynamic&gt;){
+      center = LatLng.fromJson(json[&#39;center&#39;]);
+      isPropertySet = true;
+    }
+    else{
+      Util.showWarning(&quot;`center` should be an object of Map&lt;String, dynamic&gt;&quot;);
+    }
   }
   if (json[&#39;defaultStyle&#39;] != null) {
     defaultStyle = json[&#39;defaultStyle&#39;].toString();
+    isPropertySet = true;
   }
   if (json[&#39;disable3dBuilding&#39;] != null) {
     disable3dBuilding = json[&#39;disable3dBuilding&#39;] as bool;
+    isPropertySet = true;
   }
   if (json[&#39;disableDefaultUI&#39;] != null) {
     disableDefaultUI = json[&#39;disableDefaultUI&#39;] as bool;
+    isPropertySet = true;
   }
   if (json[&#39;gestureHandling&#39;] != null) {
     if (json[&#39;gestureHandling&#39;].toString() == &#39;none&#39;){
       gestureHandling = GestureHandlingMode.none;
+      isPropertySet = true;
     } else if (json[&#39;gestureHandling&#39;].toString() == &#39;greedy&#39;){
       gestureHandling = GestureHandlingMode.greedy;
+      isPropertySet = true;
     } else if (json[&#39;gestureHandling&#39;].toString() == &#39;cooperative&#39;){
       gestureHandling = GestureHandlingMode.cooperative;
+      isPropertySet = true;
     }
   }
   if (json[&#39;styles&#39;] != null) {
-    List&lt;Map&lt;String, dynamic&gt;&gt; styleList = json[&#39;styles&#39;];
-    for(Map&lt;String, dynamic&gt; item in styleList){
-      styles?.add(MapStyleSpec.fromJson(item));
+    if (json[&#39;styles&#39;] is List&lt;Map&lt;String, dynamic&gt;&gt;){
+      List&lt;Map&lt;String, dynamic&gt;&gt; styleList = json[&#39;styles&#39;];
+      for(Map&lt;String, dynamic&gt; item in styleList){
+        styles?.add(MapStyleSpec.fromJson(item));
+        isPropertySet = true;
+      }
+    }
+    else{
+      Util.showWarning(&quot;`styles` should be an object of List&lt;Map&lt;String, dynamic&gt;&gt;&quot;);
     }
   }
   if (json[&#39;zoom&#39;] != null) {
     zoom = json[&#39;zoom&#39;].toDouble();
+    isPropertySet = true;
+  }
+
+  if (json[&#39;tilt&#39;] != null) {
+    tilt = json[&#39;tilt&#39;].toDouble();
+    isPropertySet = true;
+  }
+
+  if (json[&#39;heading&#39;] != null) {
+    heading = json[&#39;heading&#39;].toDouble();
+    isPropertySet = true;
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for MapOptions.&quot;);
   }
 }</code></pre>
 </section>
@@ -140,8 +174,10 @@
           <li><a href="../../woosmap_flutter/MapOptions/disableDefaultUI.html">disableDefaultUI</a></li>
           <li><a href="../../woosmap_flutter/MapOptions/gestureHandling.html">gestureHandling</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../../woosmap_flutter/MapOptions/heading.html">heading</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
           <li><a href="../../woosmap_flutter/MapOptions/styles.html">styles</a></li>
+          <li><a href="../../woosmap_flutter/MapOptions/tilt.html">tilt</a></li>
           <li><a href="../../woosmap_flutter/MapOptions/zoom.html">zoom</a></li>
 
         <li class="section-title"><a href="../../woosmap_flutter/MapOptions-class.html#instance-methods">Methods</a></li>

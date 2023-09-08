@@ -83,13 +83,29 @@
   this.anchorPoint,
   this.clickable,
   this.draggable,
-  this.icon,
-  this.label,
+  dynamic icon,
+  dynamic label,
   this.opacity,
   this.position,
   this.title,
   this.visible,
-});</code></pre>
+}){
+  if (icon != null &amp;&amp; (icon is! String || icon is! WoosIcon)){
+    throw ArgumentError(
+              &#39;icon should be either string or WoosIcon object&#39;);
+  }
+  else{
+    _icon = icon;
+  }
+  if (label != null &amp;&amp; !(label is String || label is WoosmMarkerLabelOptions)){
+    throw ArgumentError(
+              &#39;label should be either string or WoosmMarkerLabelOptions object&#39;);
+  }
+  else{
+    _label = label;
+  }
+
+}</code></pre>
 </section>
 
 

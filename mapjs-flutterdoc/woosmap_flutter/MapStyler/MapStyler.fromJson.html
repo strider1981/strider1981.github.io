@@ -72,29 +72,42 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MapStyler.fromJson(Map&lt;String, dynamic&gt; json) {
+  bool isPropertySet = false;
   if (json[&#39;color&#39;] != null) {
     color = json[&#39;color&#39;].toString();
+    isPropertySet = true;
   }
   if (json[&#39;gamma&#39;] != null) {
     color = json[&#39;gamma&#39;].toDouble();
+    isPropertySet = true;
   }
   if (json[&#39;hue&#39;] != null) {
     hue = json[&#39;hue&#39;].toString();
+    isPropertySet = true;
   }
   if (json[&#39;invert_lightness&#39;] != null) {
     invertLightness = json[&#39;invert_lightness&#39;] as bool;
+    isPropertySet = true;
   }
   if (json[&#39;lightness&#39;] != null) {
     lightness = json[&#39;lightness&#39;].toDouble();
+    isPropertySet = true;
   }
   if (json[&#39;saturation&#39;] != null) {
     saturation = json[&#39;saturation&#39;].toDouble();
+    isPropertySet = true;
   }
   if (json[&#39;visibility&#39;] != null) {
     visibility = json[&#39;visibility&#39;].toString();
+    isPropertySet = true;
   }
   if (json[&#39;weight&#39;] != null) {
     weight = json[&#39;weight&#39;].toDouble();
+    isPropertySet = true;
+  }
+
+  if (!isPropertySet){
+    Util.showWarning(&quot;No valid properties found in given map for MapStyler.&quot;);
   }
 }</code></pre>
 </section>
