@@ -87,18 +87,22 @@
   if (json[&#39;icon&#39;] != null) {
     if (json[&#39;icon&#39;] is String){
       icon = json[&#39;icon&#39;].toString();
+    } else if (json[&#39;icon&#39;] is Map&lt;String, dynamic&gt;){
+      icon = WoosIcon.fromJson(json[&#39;icon&#39;]);
     }
     else{
-      icon = WoosIcon.fromJson(json[&#39;icon&#39;]);
+      throw const FormatException(&#39;icon should either be a string or instance of Map object.&#39;);
     }
   }
 
   if (json[&#39;label&#39;] != null) {
     if (json[&#39;label&#39;] is String){
       label = json[&#39;label&#39;].toString();
+    } else if (json[&#39;label&#39;] is Map&lt;String, dynamic&gt;){
+      label = WoosmMarkerLabelOptions.fromJson(json[&#39;label&#39;]);
     }
     else{
-      label = WoosmMarkerLabelOptions.fromJson(json[&#39;label&#39;]);
+      throw const FormatException(&#39;label should either be a string or instance of Map object.&#39;);
     }
   }
 

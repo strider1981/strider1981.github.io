@@ -88,8 +88,20 @@ Check <a href="https://developers.woosmap.com/products/indoor-api/indoor-js-api/
       units = UnitSystem.imperial;
     }
     mode = json[&#39;mode&#39;];
-    originId = json[&#39;originId&#39;];
-    destinationId = json[&#39;destinationId&#39;];
+    if (json[&#39;originId&#39;] != null){
+      if (json[&#39;originId&#39;] is String || json[&#39;originId&#39;] is int){
+        originId = json[&#39;originId&#39;];
+      } else {
+        throw const FormatException(&#39;originId should either be a string or integer.&#39;);
+      }
+    }
+    if (json[&#39;destinationId&#39;] != null){
+      if (json[&#39;destinationId&#39;] is String || json[&#39;destinationId&#39;] is int){
+        destinationId = json[&#39;destinationId&#39;];
+      } else {
+        throw const FormatException(&#39;destinationId should either be a string or integer.&#39;);
+      }
+    }
     avoid = json[&#39;avoid&#39;];
     optimize = json[&#39;optimize&#39;];
     waypoints = json[&#39;waypoints&#39;];
