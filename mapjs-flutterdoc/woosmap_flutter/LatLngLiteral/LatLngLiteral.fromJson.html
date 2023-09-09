@@ -72,7 +72,10 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">LatLngLiteral.fromJson(Map&lt;String, dynamic&gt; json) {
+  assert(json[&#39;lat&#39;] != null, &#39;lat should not be null&#39;);
   lat = json[&#39;lat&#39;].toDouble();
+
+  assert(json[&#39;lng&#39;] != null, &#39;lng should not be null&#39;);
   lng = json[&#39;lng&#39;].toDouble();
 }</code></pre>
 </section>

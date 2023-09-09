@@ -98,7 +98,7 @@
     this.avoid,
     this.optimize}){
 
-  if (originId != null &amp;&amp; (originId is! String || originId is! int)){
+  if (originId != null &amp;&amp; (originId is! String &amp;&amp; originId is! int)){
     throw ArgumentError(
               &#39;originId should be either string or int&#39;);
   }
@@ -106,7 +106,7 @@
     _originId = originId;
   }
 
-  if (destinationId != null &amp;&amp; (destinationId is! String || destinationId is! int)){
+  if (destinationId != null &amp;&amp; (destinationId is! String &amp;&amp; destinationId is! int)){
     throw ArgumentError(
               &#39;destinationId should be either string or int&#39;);
   }

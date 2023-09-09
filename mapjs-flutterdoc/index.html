@@ -268,6 +268,115 @@
 </ul>
 <pre class="language-dart"><code>await _controller.setZoom(20);
 </code></pre>
+<h3 id="add-marker-on-the-map">Add Marker on the map.</h3>
+<p>To add marker on the map, you can create an object of <code>Marker</code> class set it's properties and call its <code>add</code> method.</p>
+<blockquote>
+<p><strong>Note:</strong> Default constructor of <code>Marker</code> is deprecated. Though it will work the way it used to in past, we suggest you use new <code>Marker.create</code> to create <code>Marker</code> object.</p>
+</blockquote>
+<p><strong>Old way</strong></p>
+<pre class="language-dart"><code class="language-dart">  testMarker = Marker(
+      {
+        "position": {"lat": 51.522, "lng": -0.13},
+        "icon": {
+          "url": "https://images.woosmap.com/dot-marker.png",
+          "scaledSize": {"height": 64, "width": 46}
+        },
+        "label": {},
+        "anchorPoint":{},
+      },
+      _controller!,
+      click: (value) {
+        txtLogController?.text = "click, ${txtLogController?.text}";
+      },
+      mouseover: (value) {
+        txtLogController?.text = "mouseover, ${txtLogController?.text}";
+      },
+      mouseout: (value) {
+        txtLogController?.text = "mouseout, ${txtLogController?.text}";
+      },
+      clickable_changed: (value) {
+        txtLogController?.text = "clickable_changed, ${txtLogController?.text}";
+      },
+      cursor_changed: (value) {
+        txtLogController?.text = "cursor_changed, ${txtLogController?.text}";
+      },
+      icon_changed: (value) {
+        txtLogController?.text = "icon_changed, ${txtLogController?.text}";
+      },
+      position_changed: (value) {
+        txtLogController?.text = "position_changed, ${txtLogController?.text}";
+      },
+      dragstart: (value) {
+        txtLogController?.text = "dragstart, ${txtLogController?.text}";
+      },
+      drag: (value) {
+        txtLogController?.text = "drag, ${txtLogController?.text}";
+      },
+      dragend: (value) {
+        txtLogController?.text = "dragend, ${txtLogController?.text}";
+      },
+      draggable_changed: (value) {
+        txtLogController?.text = "draggable_changed, ${txtLogController?.text}";
+      },
+      visible_changed: (value) {
+        txtLogController?.text = "visible_changed, ${txtLogController?.text}";
+      },
+      zIndex_changed: (value) {
+        txtLogController?.text = "zIndex_changed, ${txtLogController?.text}";
+      },
+    );
+  testMarker?.add();
+</code></pre>
+<p><strong>New way</strong></p>
+<pre class="language-dart"><code class="language-dart">  MarkerOptions markerOptions = MarkerOptions();
+  markerOptions.position = LatLng(lat: 51.522, lng: -0.13);
+  markerOptions.icon = WoosIcon(url: "https://images.woosmap.com/dot-marker.png", scaledSize: WoosSize(height: 64, width: 46));
+
+  testMarker = Marker.create(
+    markerOptions,
+    _controller!,
+    click: (value) {
+      txtLogController?.text = "click, ${txtLogController?.text}";
+    },
+    mouseover: (value) {
+      txtLogController?.text = "mouseover, ${txtLogController?.text}";
+    },
+    mouseout: (value) {
+      txtLogController?.text = "mouseout, ${txtLogController?.text}";
+    },
+    clickable_changed: (value) {
+      txtLogController?.text = "clickable_changed, ${txtLogController?.text}";
+    },
+    cursor_changed: (value) {
+      txtLogController?.text = "cursor_changed, ${txtLogController?.text}";
+    },
+    icon_changed: (value) {
+      txtLogController?.text = "icon_changed, ${txtLogController?.text}";
+    },
+    position_changed: (value) {
+      txtLogController?.text = "position_changed, ${txtLogController?.text}";
+    },
+    dragstart: (value) {
+      txtLogController?.text = "dragstart, ${txtLogController?.text}";
+    },
+    drag: (value) {
+      txtLogController?.text = "drag, ${txtLogController?.text}";
+    },
+    dragend: (value) {
+      txtLogController?.text = "dragend, ${txtLogController?.text}";
+    },
+    draggable_changed: (value) {
+      txtLogController?.text = "draggable_changed, ${txtLogController?.text}";
+    },
+    visible_changed: (value) {
+      txtLogController?.text = "visible_changed, ${txtLogController?.text}";
+    },
+    zIndex_changed: (value) {
+      txtLogController?.text = "zIndex_changed, ${txtLogController?.text}";
+    },
+  );
+  testMarker?.add();
+</code></pre>
 <h3 id="building-directions-request">Building Directions Request</h3>
 <p>You can calculate directions and plot by using the <code>WoosmapMapViewWidget.route</code> method. This method is an interface to the Route endpoint of Woosmap Distance API. This service compute travel distance, time and path for a pair of origin and destination.</p>
 <p>You may either display these directions results using custom overlays or use the <code>WoosmapMapViewWidget.setRoute</code> method to render these results.</p>
@@ -286,12 +395,16 @@
       )
 </code></pre>
 <p>To display route on map.</p>
-<pre class="language-dart"><code class="language-dart">    _controller?.route(DirectionRequest({
-          "origin": {"lat": 48.86288, "lng": 2.34946},
-          "destination": {"lat": 52.52457, "lng": 13.42347}
-        }).then((route) {
-          _controller?.setRoute(route: route);
-        });
+<pre class="language-dart"><code class="language-dart">  _controller?.route(DirectionRequest(
+    origin: LatLng(lat: 48.86288, lng: 2.34946),
+    destination: LatLng(lat: 52.52457, lng: 13.42347),
+    unitSystem: UnitSystem.metric,
+    travelMode: TravelMode.driving,
+    provideRouteAlternatives: true
+  ))
+  .then((route) {
+    _controller?.setRoute(route: route);
+  });
 </code></pre>
 <p>To clear displayed route on map.</p>
 <pre class="language-typescript"><code class="language-typescript">    _controller?.setRoute(route: null);
@@ -342,22 +455,24 @@
 </code></pre>
 <p><strong>New way</strong></p>
 <pre class="language-dart"><code class="language-dart">WoosmapMapViewWidget.create(
-  wooskey: "&lt;&lt;YOUR WOOSMAP KEY&gt;&gt;",
+  wooskey: AppConstants.of(context)?.wooskey ?? "",
   widget: true,
+  activate_indoor_product: true,
   indoorRendererConfiguration: IndoorRendererConfiguration(
     centerMap: true,
     defaultFloor: 3
   ),
-  indoorWidgetConfiguration: IndoorWidgetConfiguration(
+  indoorWidgetConfiguration: IndoorWidgetConfiguration (
     units: UnitSystem.metric,
-    ui: IndoorWidgetConfigurationUI.fromJson({
-      "primaryColor": "#318276",
-      "secondaryColor": "#004651",
-      "tertiaryColor": "#E20813"
-    }),
+    ui: IndoorWidgetConfigurationUI(
+      primaryColor: "#318276",
+      secondaryColor: "#004651",
+      tertiaryColor: "#E20813"
+    ),
   ),
   onRef: (p0) async {
     _controller = p0;
+    reloadMenu();
   },
   indoor_venue_loaded: (message) {
     debugPrint(jsonEncode(message));
@@ -371,6 +486,10 @@
   indoor_user_location: (message) {
     debugPrint(jsonEncode(message));
   },
+  indoor_directions: (message) {
+    _controller?.setDirections(message);
+    debugPrint(jsonEncode(message));
+  },
   indoor_highlight_step: (message) {
     debugPrint(jsonEncode(message));
   },
@@ -382,7 +501,7 @@
 <ul>
 <li>Load Indoor map</li>
 </ul>
-<pre class="language-dart"><code>_controller.setVenue('mtp');
+<pre class="language-dart"><code>_controller.setVenue('wgs_mtp');
 </code></pre>
 <ul>
 <li>Show all venue</li>
@@ -423,7 +542,7 @@
 <p>By using Lat/Lng</p>
 <pre class="language-dart"><code class="language-dart">///Old way
 _controller.directions(DirectionParameter.fromJson({
-          "venueId": 'mtp',
+          "venueId": 'wgs_mtp',
           "origin": {"lat": 43.60664187325, "lng": 3.921814671575},
           "originLevel": 3,
           "destination": {"lat": 43.60665215333, "lng": 3.921680093435},
@@ -436,23 +555,23 @@ _controller.directions(DirectionParameter.fromJson({
 
 ///New way
 _controller.directions(IndoorDirectionRequest(
-          venueId: 'mtp',
-          origin: {"lat": 43.60664187325, "lng": 3.921814671575},
-          originLevel: 3,
-          destination: LatLng.fromJson({"lat": 43.60665215333, "lng": 3.921680093435}),
-          destinationLevel: 3,
-          language: en,
-          units: UnitSystem.metric,
-          mode: "wheelchair"
-        ))
-        .then((route) =&gt; {_controller.setDirections(route)});
+        venueId: 'wgs_mtp',
+        origin: LatLng(lat: 43.60664187325, lng: 3.921814671575),
+        originLevel: 3,
+        destination: LatLng(lat: 43.60665215333, lng: 3.921680093435),
+        destinationLevel: 3,
+        language: "en",
+        units: UnitSystem.metric,
+        mode: "wheelchair",
+      ))
+      .then((route) =&gt; {_controller.setDirections(route)});
 </code></pre>
 <p>By using Poi ID</p>
 <pre class="language-dart"><code class="language-dart">///Old way
 _controller.directions(DirectionParameter.fromJson({
-          "venueId": 'mtp',
-          "originId": 614309,
-          "destinationId": 614165,
+          "venueId": 'wgs_mtp',
+          "originId": 3694972,
+          "destinationId": 3694921,
           "language": "en",
           "units": "metric",
           "mode": "wheelchair"
@@ -461,20 +580,20 @@ _controller.directions(DirectionParameter.fromJson({
 
 ///New way
 _controller.directions(IndoorDirectionRequest(
-          venueId: 'mtp',
-          originId: 614309,
-          destinationId: 614165,
-          language: "en",
-          units: UnitSystem.metric,
-          mode: "wheelchair"
-        ))
-        .then((route) =&gt; {_controller.setDirections(route)});
+        venueId: 'wgs_mtp',
+        originId: 3694972,
+        destinationId: 3694921,
+        language: "en",
+        units: UnitSystem.metric,
+        mode: "wheelchair",
+      ))
+      .then((route) =&gt; {_controller?.setDirections(route)});
 </code></pre>
 <p>By using Poi Ref</p>
 <pre class="language-dart"><code class="language-dart">///Old way
 _controller.directions(DirectionParameter.fromJson({
-          "venueId": 'mtp',
-          "originId": "ref:meeting001",
+          "venueId": 'wgs_mtp',
+          "originId": "ref:meeting002",
           "destinationId": "ref:tropiques",
           "language": "en",
           "units": "metric",
@@ -484,8 +603,8 @@ _controller.directions(DirectionParameter.fromJson({
 
 ///New way
 _controller.directions(IndoorDirectionRequest(
-          venueId: 'mtp',
-          originId: "ref:meeting001",
+          venueId: 'wgs_mtp',
+          originId: "ref:meeting002",
           destinationId: "ref:tropiques",
           language: "en",
           units: UnitSystem.metric,
@@ -497,8 +616,8 @@ _controller.directions(IndoorDirectionRequest(
 Valid Waypoint formats are <code>lat,lng,level</code> or <code>poiid</code> or ref:<code>poiref</code></p>
 <pre class="language-dart"><code class="language-dart">///Old way
 _controller.directions(DirectionParameter.fromJson({
-          "venueId": 'mtp',
-          "originId": "ref:meeting001",
+          "venueId": 'wgs_mtp',
+          "originId": "ref:meeting002",
           "destinationId": "ref:tropiques",
           "waypoints": ["ref:meeting001", "ref:tropiques"]
         }))
@@ -506,8 +625,8 @@ _controller.directions(DirectionParameter.fromJson({
 
 ///New way
 _controller.directions(IndoorDirectionRequest(
-          venueId: 'mtp',
-          originId: "ref:meeting001",
+          venueId: 'wgs_mtp',
+          originId: "ref:meeting002",
           destinationId: "ref:tropiques",
           waypoints: ["ref:meeting001", "ref:tropiques"]
         ))
@@ -610,37 +729,29 @@ _controller.directions(IndoorDirectionRequest(
 </code></pre>
 <p><strong>New way</strong></p>
 <p>Using <code>StoreOverlay.create</code></p>
-<pre class="language-dart"><code class="language-dart">  storesOverlay = StoreOverlay.create(Style(
-    breakPoint: 14,
-    rules: [
-      TypedStyleRule.fromJson({
-        "color": "#1D1D1D",
-        "type": "takeaway",
-        "icon": {
-          "url": "https://images.woosmap.com/starbucks-marker-black.svg",
-          "scaledSize": {"height": 40, "width": 34}
-        },
-        "selectedIcon": {
-          "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
-          "scaledSize": {"height": 50, "width": 43}
-        }
-      })
-    ],
-    defaultStyleRule: StyleRule.fromJson({
-      "color": "#008a2f",
-      "size": 8,
-      "minSize": 1,
-      "icon": {
-        "url": "https://images.woosmap.com/starbucks-marker.svg",
-        "scaledSize": {"height": 40, "width": 34}
-      },
-      "selectedIcon": {
-        "url": "https://images.woosmap.com/starbucks-marker-selected.svg",
-        "scaledSize": {"height": 50, "width": 43}
-      }
-    })
-  ), _controller!);
+<pre class="language-dart"><code class="language-dart">  ///Defined TypedStyleRule
+  TypedStyleRule typedStyleRule = TypedStyleRule();
+  typedStyleRule.color = "#1D1D1D";
+  typedStyleRule.type = "takeaway";
+  typedStyleRule.icon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker-black.svg", scaledSize: WoosSize(width: 34, height: 40));
+  typedStyleRule.selectedIcon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker-selected.svg", scaledSize: WoosSize(width: 43, height: 50));
 
+  ///Defined StyleRule
+  StyleRule styleRule = StyleRule();
+  styleRule.color = "#008a2f";
+  styleRule.size = 8;
+  styleRule.minSize = 1;
+  styleRule.icon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker.svg", scaledSize: WoosSize(width: 34, height: 40));
+  styleRule.selectedIcon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker-selected.svg", scaledSize: WoosSize(width: 50, height: 43));
+
+  ///Create Style with StyleRule and TypedStyleRule
+  Style style = Style();
+  style.breakPoint = 14;
+  style.rules = [typedStyleRule];
+  style.defaultStyleRule = styleRule;
+  
+
+  storesOverlay = StoreOverlay.create(style, _controller!);
   storesOverlay?.add();
 </code></pre>
 <h3 id="android-platform-settings">Android Platform Settings</h3>

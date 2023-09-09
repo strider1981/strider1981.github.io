@@ -101,7 +101,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">set destinationId(dynamic value) {
-  if (value != null &amp;&amp; (value is! String || value is! int)){
+  if (value != null &amp;&amp; (value is! String &amp;&amp; value is! int)){
     throw ArgumentError(
               &#39;destinationId should be either string or int&#39;);
   }

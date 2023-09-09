@@ -90,14 +90,14 @@
   this.title,
   this.visible,
 }){
-  if (icon != null &amp;&amp; (icon is! String || icon is! WoosIcon)){
+  if (icon != null &amp;&amp; (icon is! String &amp;&amp; icon is! WoosIcon)){
     throw ArgumentError(
               &#39;icon should be either string or WoosIcon object&#39;);
   }
   else{
     _icon = icon;
   }
-  if (label != null &amp;&amp; !(label is String || label is WoosmMarkerLabelOptions)){
+  if (label != null &amp;&amp; !(label is String &amp;&amp; label is WoosmMarkerLabelOptions)){
     throw ArgumentError(
               &#39;label should be either string or WoosmMarkerLabelOptions object&#39;);
   }

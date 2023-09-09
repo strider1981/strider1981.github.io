@@ -72,7 +72,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">WoosIcon.fromJson(Map&lt;String, dynamic&gt; json) {
+  assert(json[&#39;url&#39;] != null, &#39;url should not be null&#39;);
   url = json[&#39;url&#39;].toString();
+
   if (json[&#39;scaledSize&#39;] != null) {
     if (json[&#39;scaledSize&#39;] is Map&lt;String, dynamic&gt;){
       scaledSize = WoosSize.fromJson(json[&#39;scaledSize&#39;]);

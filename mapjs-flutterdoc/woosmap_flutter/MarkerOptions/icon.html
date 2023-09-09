@@ -103,7 +103,7 @@ A string or a WoosIcon object
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">set icon(dynamic value){
-  if (value != null &amp;&amp; (value is! String || value is! WoosIcon)){
+  if (value != null &amp;&amp; (value is! String &amp;&amp; value is! WoosIcon)){
     throw ArgumentError(
               &#39;icon should be either string or WoosIcon object&#39;);
   }

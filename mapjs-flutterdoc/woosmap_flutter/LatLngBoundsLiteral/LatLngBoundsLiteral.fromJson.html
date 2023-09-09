@@ -72,9 +72,16 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">LatLngBoundsLiteral.fromJson(Map&lt;String, dynamic&gt; json) {
+  assert(json[&#39;east&#39;] != null, &#39;east should not be null&#39;);
   east = json[&#39;east&#39;].toDouble();
+
+  assert(json[&#39;west&#39;] != null, &#39;west should not be null&#39;);
   west = json[&#39;west&#39;].toDouble();
+
+  assert(json[&#39;north&#39;] != null, &#39;north should not be null&#39;);
   north = json[&#39;north&#39;].toDouble();
+
+  assert(json[&#39;south&#39;] != null, &#39;south should not be null&#39;);
   south = json[&#39;south&#39;].toDouble();
 }</code></pre>
 </section>

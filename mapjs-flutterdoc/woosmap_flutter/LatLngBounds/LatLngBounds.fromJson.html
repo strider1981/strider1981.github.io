@@ -72,7 +72,10 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">LatLngBounds.fromJson(Map&lt;String, dynamic&gt; json) {
+  assert(json[&#39;sw&#39;] != null, &#39;sw should not be null&#39;);
   sw = LatLng.fromJson(json[&#39;sw&#39;]);
+
+  assert(json[&#39;ne&#39;] != null, &#39;ne should not be null&#39;);
   ne = LatLng.fromJson(json[&#39;ne&#39;]);
 }</code></pre>
 </section>
