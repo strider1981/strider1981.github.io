@@ -105,7 +105,7 @@ A string or a WoosmMarkerLabelOptions object
   <pre class="language-dart"><code class="language-dart">set label(dynamic value){
   if (value != null &amp;&amp; (value is! String &amp;&amp; value is! WoosmMarkerLabelOptions)){
     throw ArgumentError(
-              &#39;icon should be either string or WoosIcon object&#39;);
+              &#39;label should be either string or WoosIcon object&#39;);
   }
   else{
     _label = value;

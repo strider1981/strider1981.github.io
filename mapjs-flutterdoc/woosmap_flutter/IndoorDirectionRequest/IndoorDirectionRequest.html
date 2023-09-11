@@ -76,7 +76,20 @@
 
     
 <section class="desc markdown">
-  <p>Default constructor</p>
+  <p>Default constructor. Creates a new <a href="../../woosmap_flutter/IndoorDirectionRequest-class.html">IndoorDirectionRequest</a> object.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/venueId.html">venueId</a> - *Required. Unique reference of Indoor venue</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/origin.html">origin</a> - A <a href="../../woosmap_flutter/LatLng-class.html">LatLng</a> object to represent start point for direction.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/originLevel.html">originLevel</a> - This represents floor for start point.</p>
+<p><code>originId</code> - A <code>dynamic</code> type. Represents a POI id or a POI ref of the starting POI. Should be either an int or a string.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/destination.html">destination</a> - A <a href="../../woosmap_flutter/LatLng-class.html">LatLng</a> object to represent end point for direction.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/destinationLevel.html">destinationLevel</a> - This represents floor for end point.</p>
+<p><code>destinationId</code> - A <code>dynamic</code> type. Represents a POI id or a POI ref of the ending POI. Should be either an int or a string.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/language.html">language</a> - You can specify language to direction instruction should appear Default will be <code>en</code></p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/units.html">units</a> - Distance value unit. Should be of type <a href="../../woosmap_flutter/UnitSystem.html">UnitSystem</a>. Default value is <a href="../../woosmap_flutter/UnitSystem.html">UnitSystem.metric</a>.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/mode.html">mode</a> - Routing profile for using suitable path only.</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/waypoints.html">waypoints</a> - Waypoints of direction request. List of (&lt;lat,lng,level&gt;) or () or(ref:)</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/avoid.html">avoid</a> - a string with the format level;lat,lng;lat,lng;lat,lng...|level;lat,lng;lat,lng;lat,lng...</p>
+<p><a href="../../woosmap_flutter/IndoorDirectionRequest/optimize.html">optimize</a> - Optionally, you may pass optimize:true with the waypoints parameter. This way the provided route is optimized by rearranging the waypoints in a more efficient order.</p>
 </section>
 
 

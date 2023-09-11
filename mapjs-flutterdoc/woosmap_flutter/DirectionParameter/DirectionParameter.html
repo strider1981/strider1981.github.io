@@ -75,6 +75,22 @@
     </section>
 
     
+<section class="desc markdown">
+  <p>Default constructor. Creates <a href="../../woosmap_flutter/DirectionParameter-class.html">DirectionParameter</a> object.</p>
+<p><code>venueId</code> - *Required. Unique reference of Indoor venue</p>
+<p><code>origin</code> - A <a href="../../woosmap_flutter/LatLng-class.html">LatLng</a> object to represent start point for direction.</p>
+<p><code>originLevel</code> - This represents floor for start point.</p>
+<p><code>originId</code> - A <code>dynamic</code> type. Represents a POI id or a POI ref of the starting POI. Should be either an int or a string.</p>
+<p><code>destination</code> - A <a href="../../woosmap_flutter/LatLng-class.html">LatLng</a> object to represent end point for direction.</p>
+<p><code>destinationLevel</code> - This represents floor for end point.</p>
+<p><code>destinationId</code> - A <code>dynamic</code> type. Represents a POI id or a POI ref of the ending POI. Should be either an int or a string.</p>
+<p><code>language</code> - You can specify language to direction instruction should appear Default will be <code>en</code></p>
+<p><code>units</code> - Distance value unit. Should be of type <a href="../../woosmap_flutter/UnitSystem.html">UnitSystem</a>. Default value is <a href="../../woosmap_flutter/UnitSystem.html">UnitSystem.metric</a>.</p>
+<p><code>mode</code> - Routing profile for using suitable path only.</p>
+<p><code>waypoints</code> - Waypoints of direction request. List of (&lt;lat,lng,level&gt;) or () or(ref:)</p>
+<p><code>avoid</code> - a string with the format level;lat,lng;lat,lng;lat,lng...|level;lat,lng;lat,lng;lat,lng...</p>
+<p><code>optimize</code> - Optionally, you may pass optimize:true with the waypoints parameter. This way the provided route is optimized by rearranging the waypoints in a more efficient order.</p>
+</section>
 
 
     
