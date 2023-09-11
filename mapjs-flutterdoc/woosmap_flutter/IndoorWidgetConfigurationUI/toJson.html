@@ -76,12 +76,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Map&lt;String, dynamic&gt; toJson() {
   final Map&lt;String, dynamic&gt; data = &lt;String, dynamic&gt;{};
-  if (primaryColor != null) {
-    data[&#39;primaryColor&#39;] = primaryColor;
-  }
-  if (secondaryColor != null) {
-    data[&#39;secondaryColor&#39;] = secondaryColor;
-  }
+  data[&#39;primaryColor&#39;] = primaryColor;
+  data[&#39;secondaryColor&#39;] = secondaryColor;
   return data;
 }</code></pre>
 </section>

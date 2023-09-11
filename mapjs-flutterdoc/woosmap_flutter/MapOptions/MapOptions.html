@@ -58,13 +58,13 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">MapOptions</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-center">{<span class="type-annotation"><a href="../../woosmap_flutter/LatLng-class.html">LatLng</a>?</span> <span class="parameter-name">center</span>, </span></li>
+      <span class="name ">MapOptions</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-center">{<span>required</span> <span class="type-annotation"><a href="../../woosmap_flutter/LatLng-class.html">LatLng</a>?</span> <span class="parameter-name">center</span>, </span></li>
+<li><span class="parameter" id="-param-zoom"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">zoom</span>, </span></li>
 <li><span class="parameter" id="-param-defaultStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">defaultStyle</span>, </span></li>
 <li><span class="parameter" id="-param-disable3dBuilding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disable3dBuilding</span>, </span></li>
 <li><span class="parameter" id="-param-disableDefaultUI"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disableDefaultUI</span>, </span></li>
 <li><span class="parameter" id="-param-gestureHandling"><span class="type-annotation"><a href="../../woosmap_flutter/GestureHandlingMode.html">GestureHandlingMode</a>?</span> <span class="parameter-name">gestureHandling</span>, </span></li>
 <li><span class="parameter" id="-param-styles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../woosmap_flutter/MapStyleSpec-class.html">MapStyleSpec</a></span>&gt;</span>?</span> <span class="parameter-name">styles</span>, </span></li>
-<li><span class="parameter" id="-param-zoom"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">zoom</span>, </span></li>
 <li><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span></li>
 <li><span class="parameter" id="-param-tilt"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">tilt</span>}</span></li>
 </ol>)
@@ -73,13 +73,13 @@
     
 <section class="desc markdown">
   <p>Default constructor. Creates <a href="../../woosmap_flutter/MapOptions-class.html">MapOptions</a> object.</p>
-<p><a href="../../woosmap_flutter/MapOptions/center.html">center</a> - The initial map center to start from.</p>
+<p><a href="../../woosmap_flutter/MapOptions/center.html">center</a> - *Required. The initial map center to start from.</p>
+<p><a href="../../woosmap_flutter/MapOptions/zoom.html">zoom</a> - *Required. The initial map zoom level to start from.</p>
 <p><a href="../../woosmap_flutter/MapOptions/defaultStyle.html">defaultStyle</a> - Default map style</p>
 <p><a href="../../woosmap_flutter/MapOptions/disable3dBuilding.html">disable3dBuilding</a> - Disable the rendering of the buildings in 3D when the map is pitched.</p>
 <p><a href="../../woosmap_flutter/MapOptions/disableDefaultUI.html">disableDefaultUI</a> - Disables the default maps controls interface. Default value is <code>false</code>.</p>
 <p><a href="../../woosmap_flutter/MapOptions/gestureHandling.html">gestureHandling</a> - This option controls how the gesture are handled Depending on the value when gesture on the map is detected (scroll on desktop, one finger pan on mobile) an overlay asking the user to use Cmd or Ctrl while scrolling or use two finger gesture to pan on mobile will be shown. Default is <a href="../../woosmap_flutter/GestureHandlingMode.html">GestureHandlingMode.auto</a></p>
 <p><a href="../../woosmap_flutter/MapOptions/styles.html">styles</a> - Map stylers.</p>
-<p><a href="../../woosmap_flutter/MapOptions/zoom.html">zoom</a> - The initial map zoom level to start from.</p>
 <p><a href="../../woosmap_flutter/MapOptions/heading.html">heading</a> - The initial map heading to start from.</p>
 <p><a href="../../woosmap_flutter/MapOptions/tilt.html">tilt</a> - The initial map tilt to start from.</p>
 </section>
@@ -89,13 +89,13 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MapOptions({
-  this.center,
+  required this.center,
+  required this.zoom,
   this.defaultStyle,
   this.disable3dBuilding,
   this.disableDefaultUI,
   this.gestureHandling,
   this.styles,
-  this.zoom,
   this.heading,
   this.tilt
 });</code></pre>

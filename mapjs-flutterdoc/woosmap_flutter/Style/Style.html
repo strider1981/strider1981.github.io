@@ -58,18 +58,18 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">Style</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-breakPoint">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">breakPoint</span>, </span></li>
-<li><span class="parameter" id="-param-defaultStyleRule"><span class="type-annotation"><a href="../../woosmap_flutter/StyleRule-class.html">StyleRule</a>?</span> <span class="parameter-name">defaultStyleRule</span>, </span></li>
-<li><span class="parameter" id="-param-rules"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../woosmap_flutter/TypedStyleRule-class.html">TypedStyleRule</a></span>&gt;</span>?</span> <span class="parameter-name">rules</span>}</span></li>
+      <span class="name ">Style</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-breakPoint">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">breakPoint</span>, </span></li>
+<li><span class="parameter" id="-param-defaultStyleRule"><span>required</span> <span class="type-annotation"><a href="../../woosmap_flutter/StyleRule-class.html">StyleRule</a>?</span> <span class="parameter-name">defaultStyleRule</span>, </span></li>
+<li><span class="parameter" id="-param-rules"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../woosmap_flutter/TypedStyleRule-class.html">TypedStyleRule</a></span>&gt;</span>?</span> <span class="parameter-name">rules</span>}</span></li>
 </ol>)
     </section>
 
     
 <section class="desc markdown">
   <p>Default constructor</p>
-<p><a href="../../woosmap_flutter/Style/breakPoint.html">breakPoint</a> - The breakpoint value at which the styling rules should be applied.</p>
-<p><a href="../../woosmap_flutter/Style/defaultStyleRule.html">defaultStyleRule</a> - The default styling rule to be applied.</p>
-<p><a href="../../woosmap_flutter/Style/rules.html">rules</a> - An array of typed styling rules to be applied.</p>
+<p><a href="../../woosmap_flutter/Style/breakPoint.html">breakPoint</a> - *Required. The breakpoint value at which the styling rules should be applied.</p>
+<p><a href="../../woosmap_flutter/Style/defaultStyleRule.html">defaultStyleRule</a> - *Required. The default styling rule to be applied.</p>
+<p><a href="../../woosmap_flutter/Style/rules.html">rules</a> - *Required. An array of typed styling rules to be applied.</p>
 </section>
 
 
@@ -77,9 +77,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Style({
-  this.breakPoint,
-  this.defaultStyleRule,
-  this.rules
+  required this.breakPoint,
+  required this.defaultStyleRule,
+  required this.rules
 });</code></pre>
 </section>
 
