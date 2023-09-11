@@ -77,11 +77,11 @@ It capture its value from <a href="../woosmap_flutter/WoosmapMapViewWidget-class
 Accepts <code>rendererConfiguration</code>, <code>widgetConfiguration</code> and <code>mapOptions</code> as JSON object.
         </dd>
         <dt id="WoosmapController.create" class="callable">
-          <span class="name"><a href="../woosmap_flutter/WoosmapController/WoosmapController.create.html">WoosmapController.create</a></span><span class="signature">(<span class="parameter" id="create-param-_webcontroller"><span class="type-annotation"><a href="https://pub.dev/documentation/webview_flutter/4.0.2/webview_flutter/WebViewController-class.html">WebViewController</a></span> <span class="parameter-name">_webcontroller</span>, </span><span class="parameter" id="create-param-_wooskey"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">_wooskey</span>, </span><span class="parameter" id="create-param-_loadAsWidget"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">_loadAsWidget</span>, </span><span class="parameter" id="create-param-rendererConfiguration"><span class="type-annotation"><a href="../woosmap_flutter/IndoorRendererConfiguration-class.html">IndoorRendererConfiguration</a>?</span> <span class="parameter-name">rendererConfiguration</span>, </span><span class="parameter" id="create-param-widgetConfiguration"><span class="type-annotation"><a href="../woosmap_flutter/IndoorWidgetConfiguration-class.html">IndoorWidgetConfiguration</a>?</span> <span class="parameter-name">widgetConfiguration</span>, </span><span class="parameter" id="create-param-mapOptions"><span class="type-annotation"><a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a>?</span> <span class="parameter-name">mapOptions</span>, </span><span class="parameter" id="create-param-activateIndoor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">activateIndoor</span></span>)</span>
+          <span class="name"><a href="../woosmap_flutter/WoosmapController/WoosmapController.create.html">WoosmapController.create</a></span><span class="signature">(<span class="parameter" id="create-param-_webcontroller"><span class="type-annotation"><a href="https://pub.dev/documentation/webview_flutter/4.0.2/webview_flutter/WebViewController-class.html">WebViewController</a></span> <span class="parameter-name">_webcontroller</span>, </span><span class="parameter" id="create-param-_wooskey"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">_wooskey</span>, </span><span class="parameter" id="create-param-_loadAsWidget"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">_loadAsWidget</span>, </span><span class="parameter" id="create-param-rendererConfiguration"><span class="type-annotation"><a href="../woosmap_flutter/IndoorRendererOptions-class.html">IndoorRendererOptions</a>?</span> <span class="parameter-name">rendererConfiguration</span>, </span><span class="parameter" id="create-param-widgetConfiguration"><span class="type-annotation"><a href="../woosmap_flutter/IndoorWidgetOptions-class.html">IndoorWidgetOptions</a>?</span> <span class="parameter-name">widgetConfiguration</span>, </span><span class="parameter" id="create-param-mapOptions"><span class="type-annotation"><a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a>?</span> <span class="parameter-name">mapOptions</span>, </span><span class="parameter" id="create-param-activateIndoor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">activateIndoor</span></span>)</span>
         </dt>
         <dd>
           Creates object from configuration objects.
-Accepts <code>rendererConfiguration</code>, <code>widgetConfiguration</code> and <code>mapOptions</code> as <a href="../woosmap_flutter/IndoorRendererConfiguration-class.html">IndoorRendererConfiguration</a>, <a href="../woosmap_flutter/IndoorWidgetConfiguration-class.html">IndoorWidgetConfiguration</a> and <a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a> objects respectively.
+Accepts <code>rendererConfiguration</code>, <code>widgetConfiguration</code> and <code>mapOptions</code> as <code>IndoorRendererConfiguration</code>, <code>IndoorWidgetConfiguration</code> and <a href="../woosmap_flutter/MapOptions-class.html">MapOptions</a> objects respectively.
         </dd>
     </dl>
   </section>
@@ -136,7 +136,7 @@ Accepts <code>rendererConfiguration</code>, <code>widgetConfiguration</code> and
 
         <dt id="rendererConfiguration" class="property">
   <span class="name"><a href="../woosmap_flutter/WoosmapController/rendererConfiguration.html">rendererConfiguration</a></span>
-  <span class="signature">&#8596; <a href="../woosmap_flutter/IndoorRendererConfiguration-class.html">IndoorRendererConfiguration</a>?</span> 
+  <span class="signature">&#8596; <a href="../woosmap_flutter/IndoorRendererOptions-class.html">IndoorRendererOptions</a>?</span> 
 
 </dt>
 <dd>
@@ -158,11 +158,11 @@ Accepts <code>rendererConfiguration</code>, <code>widgetConfiguration</code> and
 
         <dt id="widgetConfiguration" class="property">
   <span class="name"><a href="../woosmap_flutter/WoosmapController/widgetConfiguration.html">widgetConfiguration</a></span>
-  <span class="signature">&#8596; <a href="../woosmap_flutter/IndoorWidgetConfiguration-class.html">IndoorWidgetConfiguration</a>?</span> 
+  <span class="signature">&#8596; <a href="../woosmap_flutter/IndoorWidgetOptions-class.html">IndoorWidgetOptions</a>?</span> 
 
 </dt>
 <dd>
-  You can add a <a href="../woosmap_flutter/WoosmapController/widgetConfiguration.html">widgetConfiguration</a> configuration json in the IndoorRenderer. Find below an example
+  You can add a <a href="../woosmap_flutter/IndoorRendererOptions-class.html">IndoorRendererOptions</a> configuration json in the IndoorRenderer. Find below an example
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -753,9 +753,11 @@ Do not use it
         <li><a href="../woosmap_flutter/DirectionParameter-class.html">DirectionParameter</a></li>
         <li><a href="../woosmap_flutter/DirectionRequest-class.html">DirectionRequest</a></li>
         <li><a href="../woosmap_flutter/IndoorDirectionRequest-class.html">IndoorDirectionRequest</a></li>
-        <li><a href="../woosmap_flutter/IndoorRendererConfiguration-class.html">IndoorRendererConfiguration</a></li>
-        <li><a href="../woosmap_flutter/IndoorWidgetConfiguration-class.html">IndoorWidgetConfiguration</a></li>
-        <li><a href="../woosmap_flutter/IndoorWidgetConfigurationUI-class.html">IndoorWidgetConfigurationUI</a></li>
+        <li><a href="../woosmap_flutter/IndoorDirectionsIcons-class.html">IndoorDirectionsIcons</a></li>
+        <li><a href="../woosmap_flutter/IndoorRendererOptions-class.html">IndoorRendererOptions</a></li>
+        <li><a href="../woosmap_flutter/IndoorRendererOptionsIcon-class.html">IndoorRendererOptionsIcon</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetOptions-class.html">IndoorWidgetOptions</a></li>
+        <li><a href="../woosmap_flutter/IndoorWidgetOptionsUI-class.html">IndoorWidgetOptionsUI</a></li>
         <li><a href="../woosmap_flutter/LatLng-class.html">LatLng</a></li>
         <li><a href="../woosmap_flutter/LatLngBounds-class.html">LatLngBounds</a></li>
         <li><a href="../woosmap_flutter/LatLngBoundsLiteral-class.html">LatLngBoundsLiteral</a></li>
@@ -764,17 +766,16 @@ Do not use it
         <li><a href="../woosmap_flutter/MapStyler-class.html">MapStyler</a></li>
         <li><a href="../woosmap_flutter/MapStyleSpec-class.html">MapStyleSpec</a></li>
         <li><a href="../woosmap_flutter/Marker-class.html">Marker</a></li>
+        <li><a href="../woosmap_flutter/MarkerLabelOptions-class.html">MarkerLabelOptions</a></li>
         <li><a href="../woosmap_flutter/MarkerOptions-class.html">MarkerOptions</a></li>
         <li><a href="../woosmap_flutter/StoreOverlay-class.html">StoreOverlay</a></li>
         <li><a href="../woosmap_flutter/Style-class.html">Style</a></li>
         <li><a href="../woosmap_flutter/StyleRule-class.html">StyleRule</a></li>
         <li><a href="../woosmap_flutter/TypedStyleRule-class.html">TypedStyleRule</a></li>
         <li><a href="../woosmap_flutter/WoosIcon-class.html">WoosIcon</a></li>
-        <li><a href="../woosmap_flutter/WoosIndoorDirectionsIcons-class.html">WoosIndoorDirectionsIcons</a></li>
         <li><a href="../woosmap_flutter/WoosmapController-class.html">WoosmapController</a></li>
         <li><a href="../woosmap_flutter/WoosmapFlutter-class.html">WoosmapFlutter</a></li>
         <li><a href="../woosmap_flutter/WoosmapMapViewWidget-class.html">WoosmapMapViewWidget</a></li>
-        <li><a href="../woosmap_flutter/WoosmMarkerLabelOptions-class.html">WoosmMarkerLabelOptions</a></li>
         <li><a href="../woosmap_flutter/WoosPadding-class.html">WoosPadding</a></li>
         <li><a href="../woosmap_flutter/WoosPoint-class.html">WoosPoint</a></li>
         <li><a href="../woosmap_flutter/WoosSize-class.html">WoosSize</a></li>

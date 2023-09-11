@@ -111,7 +111,7 @@
       _label = json[&#39;label&#39;].toString();
       isPropertySet = true;
     } else if (json[&#39;label&#39;] is Map&lt;String, dynamic&gt;){
-      _label = WoosmMarkerLabelOptions.fromJson(json[&#39;label&#39;]);
+      _label = MarkerLabelOptions.fromJson(json[&#39;label&#39;]);
       isPropertySet = true;
     }
     else{

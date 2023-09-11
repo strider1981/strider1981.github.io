@@ -72,7 +72,7 @@
 <section class="desc markdown">
   <p>Adds a letter or number label inside a marker.
 A string or a WoosmMarkerLabelOptions object
-(WoosmMarkerLabelOptions object Specification)<code>https://pub.dev/documentation/woosmap_flutter/latest/woosmap_flutter/WoosmMarkerLabelOptions-class.html</code></p>
+(MarkerLabelOptions object Specification)<code>https://pub.dev/documentation/woosmap_flutter/latest/woosmap_flutter/MarkerLabelOptions-class.html</code></p>
 </section>
 
 
@@ -103,9 +103,9 @@ A string or a WoosmMarkerLabelOptions object
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">set label(dynamic value){
-  if (value != null &amp;&amp; (value is! String &amp;&amp; value is! WoosmMarkerLabelOptions)){
+  if (value != null &amp;&amp; (value is! String &amp;&amp; value is! MarkerLabelOptions)){
     throw ArgumentError(
-              &#39;label should be either string or WoosIcon object&#39;);
+              &#39;label should be either string or MarkerLabelOptions object&#39;);
   }
   else{
     _label = value;

@@ -89,8 +89,8 @@ Accepts <code>rendererConfiguration</code>, <code>widgetConfiguration</code> and
     this.activateIndoor) {
 
   this.mapOptions = MapOptions.fromJson(mapOptions);
-  this.rendererConfiguration = IndoorRendererConfiguration.fromJson(rendererConfiguration);
-  this.widgetConfiguration = IndoorWidgetConfiguration.fromJson(widgetConfiguration);
+  this.rendererConfiguration = IndoorRendererOptions.fromJson(rendererConfiguration);
+  this.widgetConfiguration = IndoorWidgetOptions.fromJson(widgetConfiguration);
   _storeOverlays = &lt;String, StoreOverlay&gt;{};
   _markers = &lt;String, Marker&gt;{};
 }</code></pre>

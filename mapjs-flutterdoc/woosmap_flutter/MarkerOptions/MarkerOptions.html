@@ -78,7 +78,7 @@
 <p><a href="../../woosmap_flutter/MarkerOptions/clickable.html">clickable</a> - If true the marker receive the click events. Default value is true.</p>
 <p><a href="../../woosmap_flutter/MarkerOptions/draggable.html">draggable</a> - If the marker is draggable or not.</p>
 <p><code>icon</code> - The icon to display. When icon is a string it is treated as Icon with the string as url property. A string or a <a href="../../woosmap_flutter/WoosIcon-class.html">WoosIcon</a> object</p>
-<p><code>label</code> - Adds a letter or number label inside a marker. A string or a <a href="../../woosmap_flutter/WoosmMarkerLabelOptions-class.html">WoosmMarkerLabelOptions</a> object.</p>
+<p><code>label</code> - Adds a letter or number label inside a marker. A string or a <code>WoosmMarkerLabelOptions</code> object.</p>
 <p><a href="../../woosmap_flutter/MarkerOptions/opacity.html">opacity</a> - The marker’s opacity (min: 0, max: 1).</p>
 <p><a href="../../woosmap_flutter/MarkerOptions/title.html">title</a> - Title of the marker.</p>
 <p><a href="../../woosmap_flutter/MarkerOptions/visible.html">visible</a> - If true the marker will be visible. Default value is true</p>
@@ -106,9 +106,9 @@
   else{
     _icon = icon;
   }
-  if (label != null &amp;&amp; !(label is String &amp;&amp; label is WoosmMarkerLabelOptions)){
+  if (label != null &amp;&amp; !(label is String &amp;&amp; label is MarkerLabelOptions)){
     throw ArgumentError(
-              &#39;label should be either string or WoosmMarkerLabelOptions object&#39;);
+              &#39;label should be either string or MarkerLabelOptions object&#39;);
   }
   else{
     _label = label;

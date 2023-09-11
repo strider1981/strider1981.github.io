@@ -414,7 +414,7 @@
 <li>Instantiating a WoosmapMapViewWidget.</li>
 </ol>
 <blockquote>
-<p><strong>Note:</strong> Default constructor of <code>WoosmapMapViewWidget</code> is deprecated. We suggest you use new <code>WoosmapMapViewWidget.create</code> which accepts <code>IndoorWidgetConfiguration</code> and <code>IndoorRendererConfiguration</code> objects.</p>
+<p><strong>Note:</strong> Default constructor of <code>WoosmapMapViewWidget</code> is deprecated. We suggest you use new <code>WoosmapMapViewWidget.create</code> which accepts <code>IndoorWidgetOptions</code> and <code>IndoorRendererOptions</code> objects.</p>
 </blockquote>
 <p><strong>Old way</strong></p>
 <pre class="language-dart"><code class="language-dart">WoosmapMapViewWidget(
@@ -457,13 +457,13 @@
   wooskey: AppConstants.of(context)?.wooskey ?? "",
   widget: true,
   activate_indoor_product: true,
-  indoorRendererConfiguration: IndoorRendererConfiguration(
+  indoorRendererConfiguration: IndoorRendererOptions(
     centerMap: true,
     defaultFloor: 3
   ),
-  indoorWidgetConfiguration: IndoorWidgetConfiguration (
+  indoorWidgetConfiguration: IndoorWidgetOptions (
     units: UnitSystem.metric,
-    ui: IndoorWidgetConfigurationUI(
+    ui: IndoorWidgetOptionsUI(
       primaryColor: "#318276",
       secondaryColor: "#004651"
     ),
