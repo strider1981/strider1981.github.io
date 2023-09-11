@@ -328,8 +328,7 @@
   testMarker?.add();
 </code></pre>
 <p><strong>New way</strong></p>
-<pre class="language-dart"><code class="language-dart">  MarkerOptions markerOptions = MarkerOptions();
-  markerOptions.position = LatLng(lat: 51.522, lng: -0.13);
+<pre class="language-dart"><code class="language-dart">  MarkerOptions markerOptions = MarkerOptions(position: LatLng(lat: 51.522, lng: -0.13));
   markerOptions.icon = WoosIcon(url: "https://images.woosmap.com/dot-marker.png", scaledSize: WoosSize(height: 64, width: 46));
 
   testMarker = Marker.create(
@@ -466,8 +465,7 @@
     units: UnitSystem.metric,
     ui: IndoorWidgetConfigurationUI(
       primaryColor: "#318276",
-      secondaryColor: "#004651",
-      tertiaryColor: "#E20813"
+      secondaryColor: "#004651"
     ),
   ),
   onRef: (p0) async {
@@ -730,27 +728,41 @@ _controller.directions(IndoorDirectionRequest(
 <p><strong>New way</strong></p>
 <p>Using <code>StoreOverlay.create</code></p>
 <pre class="language-dart"><code class="language-dart">  ///Defined TypedStyleRule
-  TypedStyleRule typedStyleRule = TypedStyleRule();
-  typedStyleRule.color = "#1D1D1D";
-  typedStyleRule.type = "takeaway";
-  typedStyleRule.icon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker-black.svg", scaledSize: WoosSize(width: 34, height: 40));
-  typedStyleRule.selectedIcon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker-selected.svg", scaledSize: WoosSize(width: 43, height: 50));
-
-  ///Defined StyleRule
-  StyleRule styleRule = StyleRule();
-  styleRule.color = "#008a2f";
-  styleRule.size = 8;
-  styleRule.minSize = 1;
-  styleRule.icon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker.svg", scaledSize: WoosSize(width: 34, height: 40));
-  styleRule.selectedIcon = WoosIcon(url: "https://images.woosmap.com/starbucks-marker-selected.svg", scaledSize: WoosSize(width: 50, height: 43));
-
-  ///Create Style with StyleRule and TypedStyleRule
-  Style style = Style();
-  style.breakPoint = 14;
-  style.rules = [typedStyleRule];
-  style.defaultStyleRule = styleRule;
+  TypedStyleRule typedStyleRule = TypedStyleRule(
+    color: "#1D1D1D",
+    icon: WoosIcon(
+        url: "https://images.woosmap.com/starbucks-marker-black.svg", 
+        scaledSize: WoosSize(width: 34, height: 40)
+      ),
+    type: "takeaway",
+    selectedIcon: WoosIcon(
+      url: "https://images.woosmap.com/starbucks-marker-selected.svg", 
+      scaledSize: WoosSize(width: 43, height: 50)
+      )
+  );
   
-
+  ///Defined StyleRule
+  StyleRule styleRule = StyleRule(
+    color: "#008a2f",
+    icon: WoosIcon(
+        url: "https://images.woosmap.com/starbucks-marker.svg", 
+        scaledSize: WoosSize(width: 34, height: 40)
+      ),
+    size: 8,
+    minSize: 1,
+    selectedIcon: WoosIcon(
+        url: "https://images.woosmap.com/starbucks-marker-selected.svg", 
+        scaledSize: WoosSize(width: 50, height: 43)
+      )
+  );
+  
+  ///Create Style with StyleRule and TypedStyleRule
+  Style style = Style(
+    breakPoint: 14,
+    defaultStyleRule: styleRule,
+    rules: [typedStyleRule]
+  );
+  
   storesOverlay = StoreOverlay.create(style, _controller!);
   storesOverlay?.add();
 </code></pre>
