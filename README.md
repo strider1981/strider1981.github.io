@@ -6,7 +6,7 @@ Static HTML, CSS and JavaScript. No build step. Serve the repository root with a
 
 ## Hosting
 
-Published through GitHub Pages from `master` at `/`. The intended custom domain is `amitkale.in`; connect it in the repository Pages settings after preparing GoDaddy DNS. A CNAME file is deliberately omitted until domain cutover so the GitHub Pages address remains usable.
+Published through GitHub Pages from `main` at `/`. The GitHub Pages custom domain is `amitkale.in`, declared in `CNAME` and in the Pages settings. GoDaddy DNS must point to GitHub Pages for the domain and certificate to work.
 
 GoDaddy DNS records:
 
@@ -23,4 +23,5 @@ Replace parking website records; preserve mail and unrelated DNS records. Add `a
 ## Assets and content
 
 The profile image and resume are supplied by Amit Kale. The downloadable resume includes the supplied contact information. Google Fonts is optional, with system font fallbacks. No analytics or tracking scripts.
+
 
