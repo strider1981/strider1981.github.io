@@ -22,6 +22,6 @@ Replace parking website records; preserve mail and unrelated DNS records. Add `a
 
 ## Assets and content
 
-The profile image and resume are supplied by Amit Kale. The downloadable resume includes the supplied contact information. Google Fonts is optional, with system font fallbacks. No analytics or tracking scripts.
+The profile image is supplied by Amit Kale. No resume PDF or phone number is included in the website assets. Profile images use responsive WebP sources. The seven product diagrams are lightweight SVG illustrations of capabilities and user journeys, not application screenshots. Scale figures are supplied by Amit Kale. Google Fonts is optional, with system font fallbacks. No analytics or tracking scripts.
 
 
